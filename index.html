@@ -1,0 +1,1560 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ағылшын Оңай</title>
+<meta name="description" content="Ағылшын тілін қазақ тілінде үйренуге арналған сайт: сөздік, фразалар, карточкалар, тест және айтылым.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f8fc; --surface:#ffffff; --surface-2:#e8f3fa; --text:#0f2537; --muted:#4a6275; --border:#d0e1ed;
+  --accent:#0074b3; --accent-strong:#005a8c; --accent-soft:#dcf0fb; --on-accent:#ffffff;
+  --gold:#f2b705; --gold-ink:#7a5600; --gold-soft:#fff3c9;
+  --ok:#1b8049; --ok-soft:#e0f4e8; --bad:#c22d38; --bad-soft:#fde5e7;
+  --shadow:0 1px 2px rgba(15,37,55,.06),0 6px 18px rgba(15,37,55,.06);
+  --radius:14px; --radius-sm:10px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b1722; --surface:#12212f; --surface-2:#173041; --text:#e8f1f8; --muted:#9fb5c5; --border:#263c4e;
+    --accent:#4cc3f5; --accent-strong:#86d6f9; --accent-soft:#133649; --on-accent:#04202e;
+    --gold:#f7c531; --gold-ink:#ffd866; --gold-soft:#3a2f0b;
+    --ok:#4ade80; --ok-soft:#0f3320; --bad:#f87171; --bad-soft:#3d1518;
+    --shadow:none; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0b1722; --surface:#12212f; --surface-2:#173041; --text:#e8f1f8; --muted:#9fb5c5; --border:#263c4e;
+  --accent:#4cc3f5; --accent-strong:#86d6f9; --accent-soft:#133649; --on-accent:#04202e;
+  --gold:#f7c531; --gold-ink:#ffd866; --gold-soft:#3a2f0b;
+  --ok:#4ade80; --ok-soft:#0f3320; --bad:#f87171; --bad-soft:#3d1518;
+  --shadow:none; color-scheme:dark;
+}
+html{font-size:17px}
+html.kid{font-size:19px; --radius:22px; --radius-sm:16px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Nunito,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+h1,h2,h3{line-height:1.25;margin:0 0 .5em}
+h1{font-size:1.75rem;font-weight:900}
+h2{font-size:1.3rem;font-weight:800}
+h3{font-size:1.1rem;font-weight:800}
+p{margin:0 0 .8em}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.muted{color:var(--muted)}
+
+/* Header */
+.top{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--border)}
+.toprow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:10px;padding-bottom:6px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:800;font-size:1.15rem;white-space:nowrap}
+.logo{width:38px;height:38px;border-radius:12px;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-weight:900;position:relative}
+.logo::after{content:"";position:absolute;right:-3px;top:-3px;width:13px;height:13px;border-radius:50%;background:var(--gold);border:2px solid var(--surface)}
+.brand b{color:var(--accent)}
+.tools{display:flex;gap:6px;align-items:center}
+.tool{border:1px solid var(--border);background:var(--surface);border-radius:999px;padding:6px 12px;cursor:pointer;font-weight:700;font-size:.85rem;display:flex;align-items:center;gap:6px;min-height:38px}
+.tool:hover{background:var(--surface-2)}
+.tool[aria-pressed="true"]{background:var(--gold-soft);border-color:var(--gold);color:var(--gold-ink)}
+.nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-bottom:8px}
+.nav::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;text-decoration:none;color:var(--muted);font-weight:700;padding:7px 12px;border-radius:999px;font-size:.92rem;white-space:nowrap}
+.nav a:hover{background:var(--surface-2);color:var(--text)}
+.nav a.active{background:var(--accent);color:var(--on-accent)}
+@media (max-width:620px){.tool .tl{display:none}.brand .bt{font-size:1rem}}
+
+main{padding-top:24px;padding-bottom:48px;min-height:70vh}
+footer{border-top:1px solid var(--border);padding:20px 0;color:var(--muted);font-size:.85rem;text-align:center}
+
+/* Common */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:var(--radius-sm);padding:10px 18px;font-weight:800;cursor:pointer;text-decoration:none;min-height:44px;line-height:1.2}
+.btn:hover{background:var(--surface-2)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.primary:hover{background:var(--accent-strong);border-color:var(--accent-strong)}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:#3b2a00}
+.btn.ok{background:var(--ok);border-color:var(--ok);color:#fff}
+.btn.danger{background:var(--bad);border-color:var(--bad);color:#fff}
+:root[data-theme="dark"] .btn.ok, :root[data-theme="dark"] .btn.danger{color:#07130c}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.ok,:root:not([data-theme="light"]) .btn.danger{color:#07130c}}
+.btn.ghost{background:transparent;border-color:transparent}
+.btn.big{padding:14px 26px;font-size:1.05rem}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.say{border:1px solid var(--border);background:var(--accent-soft);color:var(--accent);border-radius:999px;width:38px;height:38px;display:inline-grid;place-items:center;cursor:pointer;flex:0 0 auto;padding:0}
+.say:hover{background:var(--accent);color:var(--on-accent)}
+.say svg{width:18px;height:18px}
+.page-head{margin-bottom:20px}
+.lead{color:var(--muted);font-size:1.05rem;max-width:62ch}
+.eyebrow{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800;margin-bottom:10px}
+.bar{height:10px;background:var(--surface-2);border-radius:999px;overflow:hidden}
+.bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--gold));border-radius:999px;transition:width .3s}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--border);background:var(--surface);border-radius:999px;padding:6px 14px;cursor:pointer;font-weight:700;font-size:.9rem;min-height:38px}
+.chip:hover{background:var(--surface-2)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;background:var(--surface)}
+.seg label{position:relative;cursor:pointer}
+.seg input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.seg span{display:block;padding:8px 14px;font-weight:700;font-size:.92rem}
+.seg input:checked+span{background:var(--accent);color:var(--on-accent)}
+.seg input:focus-visible+span{outline:3px solid var(--gold);outline-offset:-3px}
+select,input[type=search]{border:1px solid var(--border);background:var(--surface);border-radius:var(--radius-sm);padding:9px 12px;min-height:44px;max-width:100%}
+input[type=search]{width:100%}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.field>label,.lbl{font-weight:800;font-size:.9rem}
+.check{display:flex;align-items:center;gap:10px;font-weight:700;margin-bottom:12px;cursor:pointer}
+.check input{width:20px;height:20px;accent-color:var(--accent)}
+.lvl{font-size:.75rem;font-weight:800;padding:2px 10px;border-radius:999px;white-space:nowrap}
+.lvl1{background:var(--ok-soft);color:var(--ok)}
+.lvl2{background:var(--gold-soft);color:var(--gold-ink)}
+.stars{color:var(--gold);letter-spacing:2px}
+.stars .off{color:var(--border)}
+.empty{text-align:center;padding:40px 16px;color:var(--muted)}
+
+/* Home */
+.hero{background:linear-gradient(135deg,var(--accent) 0%,#2aa3dd 100%);color:#fff;border-radius:var(--radius);padding:32px 24px;margin-bottom:20px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:var(--gold);opacity:.9}
+.hero>*{position:relative;z-index:1;max-width:620px}
+@media (max-width:620px){.hero::after{width:130px;height:130px;right:-55px;top:-55px}}
+.hero p{font-size:1.08rem;opacity:.95}
+.hero .btn{border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.12);color:#fff}
+.hero .btn.gold{background:var(--gold);border-color:var(--gold);color:#3b2a00}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.home-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px}
+@media (max-width:760px){.home-grid{grid-template-columns:1fr}}
+.wotd-main{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.wotd-emoji{font-size:3rem;line-height:1}
+.wotd-en{font-size:2rem;font-weight:900;color:var(--accent)}
+.wotd-tr{color:var(--muted);font-weight:700}
+.wotd-kk{font-size:1.25rem;font-weight:800;margin:6px 0 14px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{background:var(--surface-2);border-radius:var(--radius-sm);padding:12px 14px}
+.stat b{display:block;font-size:1.6rem;font-weight:900;line-height:1.2}
+.stat span{font-size:.85rem;color:var(--muted);font-weight:700}
+.stats.four{grid-template-columns:repeat(4,1fr)}
+@media (max-width:700px){.stats.four{grid-template-columns:1fr 1fr}}
+.path{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
+@media (max-width:860px){.path{grid-template-columns:1fr 1fr}}
+@media (max-width:460px){.path{grid-template-columns:1fr}}
+.path a{display:block;height:100%;text-decoration:none;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+.path a:hover{border-color:var(--accent)}
+.path .num{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--gold);color:#3b2a00;font-weight:900;margin-bottom:8px}
+.path b{display:block;font-size:1.05rem}
+.path span{color:var(--muted);font-size:.92rem}
+
+/* Words */
+.filters{display:grid;gap:14px;margin-bottom:18px}
+.frow{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.count{color:var(--muted);font-weight:700;margin-bottom:10px}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.wcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;display:flex;gap:12px;box-shadow:var(--shadow)}
+.wcard.is-learned{border-color:var(--ok);background:linear-gradient(0deg,var(--ok-soft),var(--surface) 60%)}
+.wemoji{font-size:2.2rem;line-height:1;padding-top:4px}
+.wbody{flex:1;min-width:0}
+.wtop{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.wen{font-size:1.2rem;font-weight:900;color:var(--accent);overflow-wrap:anywhere}
+.wtr{color:var(--muted);font-weight:600;font-size:.92rem}
+.wkk{font-weight:800;margin:2px 0 10px}
+.wfoot{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.learn{border:1px solid var(--border);background:var(--surface);border-radius:999px;padding:4px 12px;font-size:.82rem;font-weight:800;cursor:pointer;min-height:34px}
+.learn:hover{border-color:var(--ok);color:var(--ok)}
+.learn[aria-pressed="true"]{background:var(--ok);border-color:var(--ok);color:#fff}
+
+/* Phrases */
+.dlg-head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin:20px 0 14px}
+.lines{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+.line{display:flex;gap:10px;align-items:flex-start}
+.line.s1{flex-direction:row-reverse}
+.spk{flex:0 0 auto;font-size:.78rem;font-weight:800;background:var(--surface-2);color:var(--muted);border-radius:999px;padding:4px 10px;margin-top:10px;max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bubble{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px;max-width:min(560px,100%);flex:1 1 auto;box-shadow:var(--shadow);transition:border-color .2s,background .2s}
+.line.s1 .bubble{background:var(--accent-soft);border-color:transparent}
+.line.playing .bubble{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-soft)}
+.len{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;font-weight:800;font-size:1.08rem}
+.ltr{color:var(--muted);font-size:.9rem;font-weight:600}
+.lkk{margin-top:4px;font-weight:700}
+.lkk.blur{filter:blur(6px);cursor:pointer;user-select:none}
+.lkk.blur:hover{filter:blur(4px)}
+
+/* Flashcards */
+.setup{max-width:560px}
+.sess-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-weight:800}
+.flip{perspective:1200px;margin:20px auto;max-width:520px;cursor:pointer;border-radius:var(--radius)}
+.flip-inner{position:relative;min-height:260px;transition:transform .5s;transform-style:preserve-3d}
+.flip.flipped .flip-inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--radius);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;border:1px solid var(--border);box-shadow:var(--shadow)}
+.front{background:var(--surface)}
+.back{background:var(--accent-soft);transform:rotateY(180deg)}
+.fc-emoji{font-size:3.4rem;line-height:1.1}
+.fc-main{font-size:2.1rem;font-weight:900;overflow-wrap:anywhere}
+.front .fc-main{color:var(--accent)}
+.fc-tr{color:var(--muted);font-weight:700}
+.hint{position:absolute;bottom:12px;font-size:.8rem;color:var(--muted);font-weight:700}
+.card-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:12px}
+.card-actions.two .btn{flex:1 1 180px;max-width:250px}
+.result{text-align:center;max-width:520px;margin:0 auto}
+.result .big-stars{font-size:3rem;color:var(--gold);letter-spacing:6px}
+.result .big-stars .off{color:var(--border)}
+.result .score{font-size:1.4rem;font-weight:900}
+
+/* Quiz */
+.types{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:18px}
+.type{border:2px solid var(--border);background:var(--surface);border-radius:var(--radius);padding:14px;text-align:left;cursor:pointer}
+.type:hover{border-color:var(--accent)}
+.type[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.type b{display:block;font-size:1rem}
+.type span{font-size:.86rem;color:var(--muted)}
+.type .ti{font-size:1.6rem;display:block;margin-bottom:4px}
+.qcard{max-width:640px;margin:16px auto 0}
+.qtype{font-size:.8rem;font-weight:800;color:var(--accent);background:var(--accent-soft);padding:3px 10px;border-radius:999px}
+.qprompt{text-align:center;margin:10px 0 20px}
+.qprompt .q-ask{color:var(--muted);font-weight:700;font-size:.95rem}
+.qprompt .q-word{font-size:2rem;font-weight:900;color:var(--accent);overflow-wrap:anywhere}
+.qprompt .q-emoji{font-size:2.6rem;line-height:1.1}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:520px){.opts{grid-template-columns:1fr}}
+.opt{border:2px solid var(--border);background:var(--surface);border-radius:var(--radius-sm);padding:14px;font-weight:800;font-size:1.02rem;cursor:pointer;text-align:center;min-height:56px}
+.opt:hover:not(:disabled){border-color:var(--accent);background:var(--surface-2)}
+.opt:disabled{cursor:default}
+.opt.correct{border-color:var(--ok);background:var(--ok-soft);color:var(--ok)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft);color:var(--bad)}
+.listen-big{width:96px;height:96px;border-radius:50%;border:none;background:var(--accent);color:var(--on-accent);cursor:pointer;display:inline-grid;place-items:center}
+.listen-big svg{width:42px;height:42px}
+.build-target{min-height:64px;border:2px dashed var(--border);border-radius:var(--radius-sm);padding:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.build-target.correct{border-color:var(--ok);border-style:solid;background:var(--ok-soft)}
+.build-target.wrong{border-color:var(--bad);border-style:solid;background:var(--bad-soft)}
+.build-pool{display:flex;flex-wrap:wrap;gap:8px;min-height:48px;margin-bottom:14px}
+.tile{border:1px solid var(--border);background:var(--surface-2);border-radius:10px;padding:8px 14px;font-weight:800;cursor:pointer;min-height:42px}
+.tile:hover:not(:disabled){border-color:var(--accent)}
+.build-target .tile{background:var(--accent-soft);border-color:var(--accent)}
+.feedback{min-height:1.6em;margin-top:14px;font-weight:800;text-align:center}
+.feedback.good{color:var(--ok)}
+.feedback.bad{color:var(--bad)}
+.qnav{display:flex;justify-content:center;margin-top:12px}
+
+/* Sounds */
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.sbox{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-align:center}
+.sbox .kz{font-size:2.2rem;font-weight:900;color:var(--accent);line-height:1.2}
+.sbox .ipa{font-weight:800;color:var(--muted)}
+.sbox .ex{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:6px;font-weight:700}
+.hard{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.hard h3{display:flex;gap:10px;align-items:baseline}
+.hard h3 .ipa{color:var(--muted);font-size:.95rem}
+.exs{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.exw{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);background:var(--surface-2);border-radius:999px;padding:4px 6px 4px 12px;font-weight:800;cursor:pointer}
+.exw:hover{border-color:var(--accent)}
+.exw i{font-style:normal;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center}
+.exw i svg{width:14px;height:14px}
+.pairs{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.pair{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px}
+.pw{border:none;background:var(--surface-2);border-radius:var(--radius-sm);padding:10px 8px;cursor:pointer;text-align:center}
+.pw:hover{background:var(--accent-soft)}
+.pw b{display:block;font-size:1.15rem;color:var(--accent)}
+.pw small{display:block;color:var(--muted);font-weight:700}
+.pw .m{font-size:.85rem;font-weight:700;color:var(--text)}
+.vs{font-weight:900;color:var(--gold-ink)}
+.section{margin-top:32px}
+.note{background:var(--gold-soft);border-left:4px solid var(--gold);border-radius:var(--radius-sm);padding:12px 16px;margin-bottom:16px}
+
+/* Progress */
+.tbars{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px 24px}
+.tbar-h{display:flex;justify-content:space-between;font-weight:700;font-size:.92rem;margin-bottom:4px}
+.tbar-h span:last-child{color:var(--muted)}
+.tablewrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--border)}
+th{color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em}
+.confirm{background:var(--bad-soft);border:1px solid var(--bad);border-radius:var(--radius-sm);padding:14px;margin-top:12px}
+.confirm p{font-weight:800;color:var(--bad)}
+
+/* Modal */
+.modal{position:fixed;inset:0;background:rgba(5,20,32,.6);display:grid;place-items:center;padding:16px;z-index:50}
+.modal[hidden]{display:none}
+.dialog{background:var(--surface);border-radius:20px;padding:28px 22px;max-width:560px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3);max-height:calc(100vh - 32px);overflow:auto}
+.mode-choices{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+@media (max-width:440px){.mode-choices{grid-template-columns:1fr}}
+.mode-choices button{border:2px solid var(--border);background:var(--surface);border-radius:18px;padding:18px 12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px}
+.mode-choices button:hover,.mode-choices button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.mode-choices .mi{font-size:2.8rem;line-height:1.2}
+.mode-choices b{font-size:1.2rem}
+.mode-choices .age{font-weight:800;color:var(--accent)}
+.mode-choices small{color:var(--muted);font-size:.85rem}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:10px 18px;border-radius:999px;font-weight:800;z-index:60;opacity:0;transition:opacity .2s;pointer-events:none;max-width:calc(100% - 32px);text-align:center}
+.toast.show{opacity:1}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class="sr" href="#app">Негізгі мазмұнға өту</a>
+<header class="top">
+  <div class="wrap toprow">
+    <a href="#home" class="brand" aria-label="Ағылшын Оңай — басты бет"><span class="logo" aria-hidden="true">A</span><span class="bt">Ағылшын <b>Оңай</b></span></a>
+    <div class="tools">
+      <button id="slowBtn" class="tool" aria-pressed="false" title="Баяу дауыс"><span aria-hidden="true">🐢</span><span class="tl">Баяу дауыс</span></button>
+      <button id="modeBtn" class="tool" title="Режимді ауыстыру"></button>
+      <button id="themeBtn" class="tool" aria-label="Жарық / қараңғы тақырып" title="Жарық / қараңғы тақырып"><span aria-hidden="true">◐</span></button>
+    </div>
+  </div>
+  <nav class="wrap nav" id="nav" aria-label="Негізгі мәзір"></nav>
+</header>
+<main class="wrap" id="app" tabindex="-1"></main>
+<footer><div class="wrap">Ағылшын Оңай · Прогресс тек осы браузерде сақталады · Дыбыстау сапасы браузерге байланысты</div></footer>
+
+<div class="modal" id="modeModal" hidden>
+  <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="mmTitle">
+    <h2 id="mmTitle">Қош келдіңіз! Режимді таңдаңыз</h2>
+    <p class="muted">Сайт жасыңызға бейімделеді. Режимді кейін жоғарғы мәзірден кез келген уақытта ауыстыруға болады.</p>
+    <div class="mode-choices">
+      <button data-mode="kid"><span class="mi" aria-hidden="true">🧒</span><b>Балалар</b><span class="age">5–16 жас</span><small>Ірі әріптер, суреттер, ойын түрінде</small></button>
+      <button data-mode="adult"><span class="mi" aria-hidden="true">🧑‍💼</span><b>Ересектер</b><span class="age">17–60 жас</span><small>Жұмыс, саяхат, күнделікті өмір</small></button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ===================== ДЕРЕКТЕР ===================== */
+// Формат: english | транскрипция | қазақша | деңгей (1 қарапайым, 2 күрделі) | эмодзи
+const RAW_TOPICS = [
+{id:'greet',name:'Сәлемдесу',icon:'👋',aud:'all',data:`
+Hello|һэлоу|Сәлем, сәлеметсіз бе|1|👋
+Hi|һай|Сәлем|1|🙋
+Good morning|гұд мо:нің|Қайырлы таң|1|🌅
+Good afternoon|гұд а:фтэну:н|Қайырлы күн|2|☀️
+Good evening|гұд и:внің|Қайырлы кеш|1|🌆
+Good night|гұд найт|Қайырлы түн|1|🌙
+Goodbye|гұдбай|Сау болыңыз|1|👋
+See you|си: ю:|Көріскенше|1|😊
+Please|пли:з|Өтінемін|1|🙏
+Thank you|сәңк ю:|Рақмет|1|💐
+You're welcome|ио: уэлкэм|Оқасы жоқ|2|🤝
+Sorry|сори|Кешіріңіз|1|😔
+Excuse me|икскью:з ми:|Кешіріңіз (назар аудару)|2|✋
+Yes|йес|Иә|1|✅
+No|ноу|Жоқ|1|❌
+How are you?|һау а: ю:|Қалайсыз?|1|🙂
+I am fine|ай әм файн|Жақсымын|1|👍
+Nice to meet you|найс ту ми:т ю:|Танысқаныма қуаныштымын|2|🤝
+My name is|май нэйм из|Менің атым|1|📛
+Welcome|уэлкэм|Қош келдіңіз|1|🎉
+Congratulations|кэнгрәчулэйшнз|Құттықтаймын|2|🎊
+Good luck|гұд лак|Сәттілік тілеймін|2|🍀`},
+{id:'colors',name:'Түстер',icon:'🎨',aud:'all',data:`
+Red|рэд|Қызыл|1|🔴
+Blue|блу:|Көк|1|🔵
+Green|гри:н|Жасыл|1|🟢
+Yellow|йелоу|Сары|1|🟡
+Black|бләк|Қара|1|⚫
+White|уайт|Ақ|1|⚪
+Orange|оринж|Қызғылт сары|1|🟠
+Purple|пө:пл|Күлгін|1|🟣
+Pink|пиңк|Қызғылт|1|🌸
+Brown|браун|Қоңыр|1|🟤
+Grey|грэй|Сұр|1|🩶
+Gold|гоулд|Алтын түсті|2|🥇
+Silver|силвэ|Күміс түсті|2|🥈
+Light blue|лайт блу:|Ашық көк|2|🩵
+Dark green|да:к гри:н|Қою жасыл|2|🌲
+Colour|калэ|Түс|1|🎨
+Bright|брайт|Ашық, жарқын|2|✨
+Dark|да:к|Қараңғы, қою|2|🌑`},
+{id:'numbers',name:'Сандар',icon:'🔢',aud:'all',data:`
+One|уан|Бір|1|1️⃣
+Two|ту:|Екі|1|2️⃣
+Three|сри:|Үш|1|3️⃣
+Four|фо:|Төрт|1|4️⃣
+Five|файв|Бес|1|5️⃣
+Six|сикс|Алты|1|6️⃣
+Seven|сэвн|Жеті|1|7️⃣
+Eight|эйт|Сегіз|1|8️⃣
+Nine|найн|Тоғыз|1|9️⃣
+Ten|тэн|Он|1|🔟
+Zero|зироу|Нөл|1|0️⃣
+Eleven|илэвн|Он бір|2|🔢
+Twelve|туэлв|Он екі|2|🔢
+Twenty|туэнти|Жиырма|2|🔢
+Thirty|сө:ти|Отыз|2|🔢
+Fifty|фифти|Елу|2|🔢
+Hundred|һандрэд|Жүз|2|💯
+Thousand|саузэнд|Мың|2|🔢
+First|фө:ст|Бірінші|2|🥇
+Second|сэкэнд|Екінші|2|🥈
+Third|сө:д|Үшінші|2|🥉
+Number|намбэ|Сан, нөмір|1|#️⃣`},
+{id:'family',name:'Отбасы',icon:'👨‍👩‍👧',aud:'all',data:`
+Mother|мазэ|Ана|1|👩
+Father|фа:зэ|Әке|1|👨
+Mum|мам|Мама|1|👩
+Dad|дәд|Папа|1|👨
+Parents|пээрэнтс|Ата-ана|2|👪
+Brother|бразэ|Аға, іні|1|👦
+Sister|систэ|Әпке, сіңлі|1|👧
+Grandmother|грәнмазэ|Әже|1|👵
+Grandfather|грәнфа:зэ|Ата|1|👴
+Son|сан|Ұл|1|👦
+Daughter|до:тэ|Қыз (перзент)|2|👧
+Baby|бэйби|Нәресте|1|👶
+Child|чайлд|Бала|1|🧒
+Children|чилдрэн|Балалар|2|🧒
+Family|фәмили|Отбасы|1|👨‍👩‍👧
+Husband|һазбэнд|Күйеу, жұбай|2|🤵
+Wife|уайф|Әйел, жұбай|2|👰
+Uncle|аңкл|Аға, нағашы аға|2|🧔
+Aunt|а:нт|Апай, тәте|2|👩
+Cousin|казн|Немере туыс|2|🧑
+Friend|фрэнд|Дос|1|🧑‍🤝‍🧑`},
+{id:'body',name:'Дене мүшелері',icon:'🧍',aud:'all',data:`
+Head|һэд|Бас|1|🙂
+Face|фэйс|Бет|1|😊
+Eye|ай|Көз|1|👁️
+Ear|иэ|Құлақ|1|👂
+Nose|ноуз|Мұрын|1|👃
+Mouth|маус|Ауыз|1|👄
+Tooth|ту:с|Тіс|1|🦷
+Teeth|ти:с|Тістер|2|🦷
+Hair|һээ|Шаш|1|💇
+Hand|һәнд|Қол (алақан)|1|✋
+Arm|а:м|Қол (білек)|1|💪
+Finger|фиңгэ|Саусақ|1|☝️
+Leg|лэг|Аяқ|1|🦵
+Foot|фұт|Табан|1|🦶
+Feet|фи:т|Табандар|2|🦶
+Neck|нэк|Мойын|2|🧣
+Shoulder|шоулдэ|Иық|2|🤷
+Back|бәк|Арқа|2|🧍
+Stomach|стамэк|Асқазан, іш|2|🫃
+Heart|һа:т|Жүрек|1|❤️
+Knee|ни:|Тізе|2|🦵
+Body|боди|Дене|1|🧍`},
+{id:'food',name:'Тамақ',icon:'🍎',aud:'all',data:`
+Bread|брэд|Нан|1|🍞
+Milk|милк|Сүт|1|🥛
+Water|уо:тэ|Су|1|💧
+Tea|ти:|Шай|1|🍵
+Coffee|кофи|Кофе|1|☕
+Apple|әпл|Алма|1|🍎
+Banana|бэна:нэ|Банан|1|🍌
+Egg|эг|Жұмыртқа|1|🥚
+Meat|ми:т|Ет|1|🥩
+Fish|фиш|Балық|1|🐟
+Rice|райс|Күріш|1|🍚
+Cheese|чи:з|Ірімшік|1|🧀
+Juice|жу:с|Шырын|1|🧃
+Soup|су:п|Сорпа|1|🍲
+Sugar|шұгэ|Қант|2|🍬
+Salt|со:лт|Тұз|2|🧂
+Butter|батэ|Сары май|2|🧈
+Potato|пэтэйтоу|Картоп|2|🥔
+Carrot|кәрэт|Сәбіз|2|🥕
+Vegetables|вэжтэблз|Көкөністер|2|🥦
+Fruit|фру:т|Жеміс|1|🍇
+Breakfast|брэкфэст|Таңғы ас|2|🍳
+Lunch|ланч|Түскі ас|2|🥪
+Dinner|динэ|Кешкі ас|2|🍽️
+Cake|кэйк|Торт|1|🎂`},
+{id:'home',name:'Үй',icon:'🏠',aud:'all',data:`
+House|һаус|Үй|1|🏠
+Room|ру:м|Бөлме|1|🚪
+Door|до:|Есік|1|🚪
+Window|уиндоу|Терезе|1|🪟
+Table|тэйбл|Үстел|1|🍽️
+Chair|чээ|Орындық|1|🪑
+Bed|бэд|Төсек|1|🛏️
+Kitchen|кичин|Ас үй|2|🍳
+Bathroom|ба:сру:м|Жуынатын бөлме|2|🛁
+Bedroom|бэдру:м|Жатын бөлме|2|🛏️
+Living room|ливің ру:м|Қонақ бөлме|2|🛋️
+Sofa|соуфэ|Диван|1|🛋️
+Lamp|ләмп|Шам|1|💡
+Key|ки:|Кілт|1|🔑
+Floor|фло:|Еден, қабат|2|🏢
+Wall|уо:л|Қабырға|2|🧱
+Garden|га:дн|Бақ|2|🌳
+Clock|клок|Сағат (қабырға)|1|🕰️
+Cup|кап|Кесе|1|☕
+Plate|плэйт|Тәрелке|2|🍽️
+Fridge|фриж|Тоңазытқыш|2|🧊
+TV|ти: ви:|Теледидар|1|📺`},
+{id:'weather',name:'Ауа райы',icon:'🌦️',aud:'all',data:`
+Sun|сан|Күн|1|☀️
+Rain|рэйн|Жаңбыр|1|🌧️
+Snow|сноу|Қар|1|❄️
+Wind|уинд|Жел|1|💨
+Cloud|клауд|Бұлт|1|☁️
+Hot|һот|Ыстық|1|🔥
+Cold|коулд|Суық|1|🥶
+Warm|уо:м|Жылы|1|🌤️
+Cool|ку:л|Салқын|2|🍃
+Sunny|сани|Күн ашық|1|🌞
+Rainy|рэйни|Жаңбырлы|2|☔
+Windy|уинди|Желді|2|🌬️
+Cloudy|клауди|Бұлтты|2|🌥️
+Storm|сто:м|Дауыл|2|⛈️
+Weather|уэзэ|Ауа райы|2|🌦️
+Spring|спрің|Көктем|1|🌷
+Summer|самэ|Жаз|1|🏖️
+Autumn|о:тэм|Күз|1|🍂
+Winter|уинтэ|Қыс|1|☃️
+Temperature|тэмпрэчэ|Температура|2|🌡️
+Umbrella|амбрэлэ|Қолшатыр|2|☂️`},
+{id:'time',name:'Уақыт',icon:'⏰',aud:'all',data:`
+Monday|манди|Дүйсенбі|1|📅
+Tuesday|тью:зди|Сейсенбі|1|📅
+Wednesday|уэнздэй|Сәрсенбі|2|📅
+Thursday|сө:здэй|Бейсенбі|2|📅
+Friday|фрайдэй|Жұма|1|📅
+Saturday|сәтэдэй|Сенбі|1|📅
+Sunday|сандэй|Жексенбі|1|📅
+Today|тудэй|Бүгін|1|📆
+Tomorrow|тэмороу|Ертең|1|➡️
+Yesterday|йестэдэй|Кеше|2|⬅️
+Day|дэй|Күн (тәулік)|1|🌞
+Week|уи:к|Апта|1|🗓️
+Month|манс|Ай|2|🗓️
+Year|йиэ|Жыл|1|🎆
+Hour|ауэ|Сағат (уақыт)|2|⏳
+Minute|минит|Минут|1|⏱️
+Morning|мо:нің|Таң|1|🌅
+Evening|и:внің|Кеш|1|🌆
+Night|найт|Түн|1|🌙
+Now|нау|Қазір|1|⌚
+Later|лэйтэ|Кейінірек|2|⏳
+Always|о:луэйз|Әрқашан|2|🔁
+Never|нэвэ|Ешқашан|2|🚫`},
+{id:'verbs',name:'Негізгі етістіктер',icon:'🏃',aud:'all',data:`
+Be|би:|Болу|1|🙂
+Have|һәв|Бар болу, ие болу|1|🤲
+Go|гоу|Бару|1|🚶
+Come|кам|Келу|1|👋
+Eat|и:т|Жеу|1|🍽️
+Drink|дриңк|Ішу|1|🥤
+Sleep|сли:п|Ұйықтау|1|😴
+Read|ри:д|Оқу|1|📖
+Write|райт|Жазу|1|✍️
+Speak|спи:к|Сөйлеу|1|🗣️
+Listen|лисн|Тыңдау|1|👂
+See|си:|Көру|1|👀
+Know|ноу|Білу|1|🧠
+Want|уонт|Қалау|1|🙏
+Like|лайк|Ұнату|1|👍
+Love|лав|Жақсы көру|1|❤️
+Play|плэй|Ойнау|1|⚽
+Work|уө:к|Жұмыс істеу|1|💼
+Help|һэлп|Көмектесу|1|🆘
+Buy|бай|Сатып алу|2|🛒
+Open|оупэн|Ашу|1|📂
+Close|клоуз|Жабу|2|🔒
+Understand|андэстәнд|Түсіну|2|💡
+Think|сиңк|Ойлау|2|🤔
+Give|гив|Беру|1|🎁
+Take|тэйк|Алу|1|🤲`},
+{id:'feel',name:'Сезімдер',icon:'😊',aud:'all',data:`
+Happy|һәпи|Бақытты, қуанышты|1|😄
+Sad|сәд|Көңілсіз|1|😢
+Angry|әңгри|Ашулы|1|😠
+Tired|тайэд|Шаршаған|1|😩
+Hungry|һаңгри|Аш|1|🤤
+Thirsty|сө:сти|Шөлдеген|2|🥵
+Scared|скээд|Қорыққан|2|😨
+Bored|бо:д|Зеріккен|2|🥱
+Big|биг|Үлкен|1|🐘
+Small|смо:л|Кішкентай|1|🐭
+Good|гұд|Жақсы|1|👍
+Bad|бәд|Жаман|1|👎
+Beautiful|бью:тифл|Әдемі|2|🌹
+New|нью:|Жаңа|1|🆕
+Old|оулд|Ескі, кәрі|1|🏚️
+Fast|фа:ст|Жылдам|1|🐆
+Slow|слоу|Баяу|1|🐢
+Easy|и:зи|Оңай|1|✅
+Difficult|дификэлт|Қиын|2|🧗
+Kind|кайнд|Мейірімді|2|🤗
+Surprised|сэпрайзд|Таң қалған|2|😲
+Calm|ка:м|Сабырлы|2|😌`},
+{id:'animals',name:'Жануарлар',icon:'🐾',aud:'kid',data:`
+Cat|кәт|Мысық|1|🐱
+Dog|дог|Ит|1|🐶
+Horse|һо:с|Жылқы|1|🐴
+Cow|кау|Сиыр|1|🐄
+Sheep|ши:п|Қой|1|🐑
+Bird|бө:д|Құс|1|🐦
+Mouse|маус|Тышқан|1|🐭
+Rabbit|рәбит|Қоян|1|🐰
+Bear|бээ|Аю|1|🐻
+Wolf|уұлф|Қасқыр|1|🐺
+Fox|фокс|Түлкі|1|🦊
+Lion|лайэн|Арыстан|1|🦁
+Tiger|тайгэ|Жолбарыс|1|🐯
+Elephant|элифэнт|Піл|2|🐘
+Monkey|маңки|Маймыл|1|🐵
+Camel|кәмл|Түйе|2|🐫
+Goat|гоут|Ешкі|2|🐐
+Chicken|чикин|Тауық|2|🐔
+Duck|дак|Үйрек|1|🦆
+Frog|фрог|Бақа|1|🐸
+Snake|снэйк|Жылан|2|🐍
+Eagle|и:гл|Бүркіт|2|🦅
+Butterfly|батэфлай|Көбелек|2|🦋`},
+{id:'school',name:'Мектеп',icon:'🏫',aud:'kid',data:`
+School|ску:л|Мектеп|1|🏫
+Teacher|ти:чэ|Мұғалім|1|👩‍🏫
+Pupil|пью:пл|Оқушы|2|🧑‍🎓
+Book|бұк|Кітап|1|📕
+Pen|пэн|Қалам|1|🖊️
+Pencil|пэнсл|Қарындаш|1|✏️
+Bag|бәг|Сөмке|1|🎒
+Desk|дэск|Парта|1|🪑
+Lesson|лэсн|Сабақ|1|📚
+Homework|һоумуө:к|Үй тапсырмасы|2|📝
+Class|кла:с|Сынып|1|🏫
+Ruler|ру:лэ|Сызғыш|2|📏
+Rubber|рабэ|Өшіргіш|2|🧽
+Notebook|ноутбұк|Дәптер|1|📓
+Board|бо:д|Тақта|2|🟩
+Break|брэйк|Үзіліс|2|🔔
+Question|куэсчэн|Сұрақ|2|❓
+Answer|а:нсэ|Жауап|2|💬
+Learn|лө:н|Үйрену|1|🧠
+Draw|дро:|Сурет салу|1|🎨
+Count|каунт|Санау|2|🧮
+Music|мью:зик|Музыка|1|🎵
+Sport|спо:т|Спорт|1|⚽`},
+{id:'shop',name:'Дүкен және ақша',icon:'🛒',aud:'adult',data:`
+Shop|шоп|Дүкен|1|🏪
+Market|ма:кит|Базар|1|🧺
+Money|мани|Ақша|1|💵
+Price|прайс|Баға|1|🏷️
+Cheap|чи:п|Арзан|1|👌
+Expensive|икспэнсив|Қымбат|2|💎
+Cash|кәш|Қолма-қол ақша|2|💵
+Card|ка:д|Карта (банк)|1|💳
+Change|чэйнж|Қайтарым ақша|2|🪙
+Receipt|риси:т|Чек|2|🧾
+Discount|дискаунт|Жеңілдік|2|🏷️
+Sale|сэйл|Сатылым, акция|2|🛍️
+Pay|пэй|Төлеу|1|💳
+Sell|сэл|Сату|1|🤝
+Size|сайз|Өлшем|1|📐
+Basket|ба:скит|Себет|2|🧺
+Customer|кастэмэ|Сатып алушы|2|🧑
+Cashier|кәшиэ|Кассир|2|🧑‍💼
+How much?|һау мач|Қанша тұрады?|1|❓
+Clothes|клоуз|Киім|2|👕
+Shoes|шу:з|Аяқ киім|1|👟
+Bank|бәңк|Банк|1|🏦
+Kilo|ки:лоу|Килограмм|1|⚖️`},
+{id:'transport',name:'Жол және көлік',icon:'🚌',aud:'adult',data:`
+Car|ка:|Көлік, машина|1|🚗
+Bus|бас|Автобус|1|🚌
+Taxi|тәкси|Такси|1|🚕
+Train|трэйн|Пойыз|1|🚆
+Plane|плэйн|Ұшақ|1|✈️
+Bike|байк|Велосипед|1|🚲
+Street|стри:т|Көше|1|🛣️
+Road|роуд|Жол|1|🛤️
+Bus stop|бас стоп|Аялдама|1|🚏
+Station|стэйшн|Вокзал, бекет|2|🚉
+Airport|ээпо:т|Әуежай|2|🛫
+Ticket|тикит|Билет|1|🎫
+Left|лэфт|Сол жақ|1|⬅️
+Right|райт|Оң жақ|1|➡️
+Straight|стрэйт|Тура|2|⬆️
+Near|ниэ|Жақын|1|📍
+Far|фа:|Алыс|1|🗺️
+Driver|драйвэ|Жүргізуші|2|🧑‍✈️
+Traffic light|трәфик лайт|Бағдаршам|2|🚦
+Map|мәп|Карта (жер)|1|🗺️
+Corner|ко:нэ|Бұрыш, қиылыс|2|📐
+Metro|мэтроу|Метро|1|🚇`},
+{id:'work',name:'Жұмыс',icon:'💼',aud:'adult',data:`
+Job|жоб|Жұмыс, қызмет|1|💼
+Office|офис|Кеңсе|1|🏢
+Boss|бос|Бастық|1|👔
+Colleague|коли:г|Әріптес|2|👥
+Meeting|ми:тің|Жиналыс|2|📊
+Salary|сәлэри|Жалақы|2|💰
+Computer|кэмпью:тэ|Компьютер|1|💻
+Phone|фоун|Телефон|1|📱
+Email|и:мэйл|Электрондық хат|1|📧
+Engineer|энжиниэ|Инженер|2|👷
+Manager|мәнижэ|Менеджер|2|🧑‍💼
+Company|кампэни|Компания|2|🏭
+Project|прожэкт|Жоба|2|📋
+Task|та:ск|Тапсырма|1|✅
+Report|рипо:т|Есеп|2|📄
+Busy|бизи|Бос емес|1|⏳
+Free|фри:|Бос|1|🆓
+Holiday|һолидэй|Демалыс|2|🏖️
+Interview|интэвью:|Сұхбат|2|🗣️
+Experience|икспиэриэнс|Тәжірибе|2|📈
+Contract|контрәкт|Келісімшарт|2|✍️
+Deadline|дэдлайн|Соңғы мерзім|2|⏰`},
+{id:'health',name:'Денсаулық',icon:'🏥',aud:'adult',data:`
+Doctor|доктэ|Дәрігер|1|🧑‍⚕️
+Nurse|нө:с|Медбике|2|👩‍⚕️
+Hospital|һоспитл|Аурухана|2|🏥
+Pharmacy|фа:мэси|Дәріхана|2|💊
+Medicine|мэдсн|Дәрі|1|💊
+Pain|пэйн|Ауырсыну|1|🤕
+Headache|һэдэйк|Бас ауруы|2|🤯
+Fever|фи:вэ|Қызу, дене қызуы|2|🌡️
+Cough|коф|Жөтел|2|😷
+Flu|флу:|Тұмау|2|🤧
+Sick|сик|Науқас|1|🤒
+Healthy|һэлси|Сау|2|💪
+Ambulance|әмбьюлэнс|Жедел жәрдем|2|🚑
+Allergy|әлэжи|Аллергия|2|🌼
+Appointment|эпойнтмэнт|Қабылдауға жазылу|2|📅
+Blood|блад|Қан|2|🩸
+Hurt|һө:т|Ауырту|1|🩹
+Tablet|тәблит|Таблетка|1|💊
+Rest|рэст|Демалу|1|🛌
+Emergency|имө:жэнси|Төтенше жағдай|2|🚨
+Dentist|дэнтист|Тіс дәрігері|2|🦷
+Feel|фи:л|Сезіну|1|🫶`},
+{id:'travel',name:'Саяхат',icon:'✈️',aud:'adult',data:`
+Travel|трәвл|Саяхат|1|🧳
+Hotel|һоутэл|Қонақүй|1|🏨
+Passport|па:спо:т|Төлқұжат|2|🛂
+Luggage|лагиж|Жүк|2|🧳
+Suitcase|су:ткэйс|Чемодан|2|🧳
+Reservation|рэзэвэйшн|Брондау|2|📝
+Visa|ви:зэ|Виза|1|📄
+Tourist|тұэрист|Турист|1|📸
+Beach|би:ч|Жағажай|1|🏖️
+Sea|си:|Теңіз|1|🌊
+Mountain|маунтин|Тау|1|⛰️
+City|сити|Қала|1|🏙️
+Country|кантри|Ел|1|🌍
+Museum|мью:зиэм|Мұражай|2|🏛️
+Restaurant|рэстэронт|Мейрамхана|2|🍴
+Flight|флайт|Рейс, ұшу|2|🛫
+Arrive|эрайв|Келу, жету|2|🛬
+Leave|ли:в|Кету|1|🚶
+Photo|фоутоу|Фото|1|📷
+Guide|гайд|Гид|2|🧭
+Abroad|эбро:д|Шетелде|2|🌐
+Souvenir|су:вэниэ|Кәдесый|2|🎁`}
+];
+
+// Диалогтар. Формат жолы: сөйлеуші | english | транскрипция | қазақша
+const DIALOGS = [
+{id:'k-meet',aud:'kid',title:'Танысу',icon:'👋',data:`
+Ару|Hi! What is your name?|һай! уот из ё: нэйм?|Сәлем! Сенің атың кім?
+Тимур|My name is Timur. And you?|май нэйм из Тимур. әнд ю:?|Менің атым Тимур. Ал сенің?
+Ару|I am Aru. How old are you?|ай әм Ару. һау оулд а: ю:?|Мен Арумын. Сен нешедесің?
+Тимур|I am eight years old.|ай әм эйт йиэз оулд|Мен сегіз жастамын.
+Ару|Let's be friends!|лэтс би: фрэндз!|Дос болайық!
+Тимур|Yes, of course!|йес, ов ко:с!|Иә, әрине!`},
+{id:'k-lesson',aud:'kid',title:'Сабақта',icon:'📚',data:`
+Мұғалім|Good morning, children!|гұд мо:нің, чилдрэн!|Қайырлы таң, балалар!
+Оқушы|Good morning, teacher!|гұд мо:нің, ти:чэ!|Қайырлы таң, ұстаз!
+Мұғалім|Open your books, please.|оупэн ё: бұкс, пли:з|Кітаптарыңды ашыңдар.
+Оқушы|May I come in?|мэй ай кам ин?|Кіруге бола ма?
+Мұғалім|Yes, come in and sit down.|йес, кам ин әнд сит даун|Иә, кір де отыр.
+Оқушы|I don't understand.|ай доунт андэстәнд|Мен түсінбедім.
+Мұғалім|Listen and repeat.|лисн әнд рипи:т|Тыңда да қайтала.`},
+{id:'k-play',aud:'kid',title:'Ойын',icon:'⚽',data:`
+Дана|Let's play football!|лэтс плэй фұтбо:л!|Футбол ойнайық!
+Ерлан|Great idea!|грэйт айдиэ!|Керемет ой!
+Дана|Can I play too?|кән ай плэй ту:?|Мен де ойнай аламын ба?
+Ерлан|Of course! Catch the ball!|ов ко:с! кәч зэ бо:л!|Әрине! Допты ұста!
+Дана|It is my turn now.|ит из май тө:н нау|Енді менің кезегім.
+Ерлан|You are the winner!|ю: а: зэ уинэ!|Сен жеңімпазсың!`},
+{id:'k-home',aud:'kid',title:'Үйде',icon:'🏠',data:`
+Бала|Mum, I am hungry.|мам, ай әм һаңгри|Мама, мен ашпын.
+Мама|Wash your hands, please.|уош ё: һәндз, пли:з|Қолыңды жуып кел.
+Бала|What is for dinner?|уот из фо: динэ?|Кешкі асқа не бар?
+Мама|Soup and bread.|су:п әнд брэд|Сорпа мен нан.
+Бала|Thank you, Mum! It is tasty.|сәңк ю:, мам! ит из тэйсти|Рақмет, мама! Дәмді екен.
+Мама|Now it is time for bed.|нау ит из тайм фо: бэд|Енді ұйықтайтын уақыт.
+Бала|Good night, Mum!|гұд найт, мам!|Қайырлы түн, мама!`},
+{id:'k-bday',aud:'kid',title:'Туған күн',icon:'🎂',data:`
+Әли|Happy birthday, Dana!|һәпи бө:сдэй, Дана!|Туған күніңмен, Дана!
+Дана|Thank you very much!|сәңк ю: вэри мач!|Көп рақмет!
+Әли|This is a present for you.|зис из э прэзнт фо: ю:|Бұл саған сыйлық.
+Дана|Wow! I love it!|уау! ай лав ит!|Мәссаған! Маған қатты ұнады!
+Әли|How old are you now?|һау оулд а: ю: нау?|Енді нешеге толдың?
+Дана|I am ten today.|ай әм тэн тудэй|Бүгін он жасқа толдым.
+Әли|Make a wish!|мэйк э уиш!|Тілек тіле!`},
+{id:'a-meet',aud:'adult',title:'Танысу',icon:'🤝',data:`
+Әсел|Hello! My name is Asel.|һэлоу! май нэйм из Әсел|Сәлеметсіз бе! Менің атым Әсел.
+Джон|Nice to meet you. I am John.|найс ту ми:т ю:. ай әм Жон|Танысқаныма қуаныштымын. Мен Джонмын.
+Әсел|Where are you from?|уээ а: ю: фром?|Қай елденсіз?
+Джон|I am from London. And you?|ай әм фром Ландэн. әнд ю:?|Мен Лондоннанмын. Ал сіз?
+Әсел|I am from Almaty.|ай әм фром Алматы|Мен Алматыданмын.
+Джон|What do you do?|уот ду: ю: ду:?|Немен айналысасыз?
+Әсел|I am a teacher.|ай әм э ти:чэ|Мен мұғаліммін.`},
+{id:'a-cafe',aud:'adult',title:'Кафеде',icon:'☕',data:`
+Даяшы|Good afternoon! Are you ready to order?|гұд а:фтэну:н! а: ю: рэди ту о:дэ?|Қайырлы күн! Тапсырыс беруге дайынсыз ба?
+Қонақ|Can I see the menu, please?|кән ай си: зэ мэнью:, пли:з?|Мәзірді көруге бола ма?
+Даяшы|Here you are.|һиэ ю: а:|Міне, ұстаңыз.
+Қонақ|I would like a coffee and a sandwich.|ай уұд лайк э кофи әнд э сәнуич|Маған кофе мен сэндвич беріңізші.
+Даяшы|Anything else?|эниси:ң элс?|Тағы бірдеңе керек пе?
+Қонақ|No, thank you. Can I have the bill?|ноу, сәңк ю:. кән ай һәв зэ бил?|Жоқ, рақмет. Есепшотты әкелесіз бе?
+Даяшы|Of course. It is ten dollars.|ов ко:с. ит из тэн доләз|Әрине. Он доллар болады.`},
+{id:'a-shop',aud:'adult',title:'Дүкенде',icon:'🛍️',data:`
+Сатушы|Can I help you?|кән ай һэлп ю:?|Сізге көмектесейін бе?
+Сатып алушы|Yes, I am looking for a jacket.|йес, ай әм лұкің фор э жәкит|Иә, мен күрте іздеп жүрмін.
+Сатушы|What size do you need?|уот сайз ду: ю: ни:д?|Сізге қандай өлшем керек?
+Сатып алушы|Medium, please. Can I try it on?|ми:диэм, пли:з. кән ай трай ит он?|Орташа. Киіп көруге бола ма?
+Сатушы|Sure. The fitting room is there.|шұэ. зэ фитің ру:м из зээ|Әрине. Киім өлшейтін бөлме ана жақта.
+Сатып алушы|How much is it?|һау мач из ит?|Бұл қанша тұрады?
+Сатушы|It is fifty dollars.|ит из фифти доләз|Елу доллар.
+Сатып алушы|I will take it.|ай уил тэйк ит|Мен мұны аламын.`},
+{id:'a-way',aud:'adult',title:'Жол сұрау',icon:'🗺️',data:`
+Турист|Excuse me, where is the bus stop?|икскью:з ми:, уээ из зэ бас стоп?|Кешіріңіз, автобус аялдамасы қайда?
+Жүргінші|Go straight and turn left.|гоу стрэйт әнд тө:н лэфт|Тура жүріп, солға бұрылыңыз.
+Турист|Is it far from here?|из ит фа: фром һиэ?|Бұл жерден алыс па?
+Жүргінші|No, it is five minutes on foot.|ноу, ит из файв минитс он фұт|Жоқ, жаяу бес минут.
+Турист|Which bus goes to the centre?|уич бас гоуз ту зэ сэнтэ?|Орталыққа қай автобус барады?
+Жүргінші|Number twelve.|намбэ туэлв|Он екінші нөмір.
+Турист|Thank you very much!|сәңк ю: вэри мач!|Көп рақмет!`},
+{id:'a-doc',aud:'adult',title:'Дәрігерде',icon:'🩺',data:`
+Дәрігер|What is the problem?|уот из зэ проблэм?|Сізді не мазалайды?
+Науқас|I have a headache and a fever.|ай һәв э һэдэйк әнд э фи:вэ|Басым ауырып, қызуым көтерілді.
+Дәрігер|How long have you been ill?|һау лоң һәв ю: би:н ил?|Қашаннан бері ауырып жүрсіз?
+Науқас|Since yesterday.|синс йестэдэй|Кешеден бері.
+Дәрігер|Let me check your temperature.|лэт ми: чэк ё: тэмпрэчэ|Температураңызды өлшейін.
+Дәрігер|Take this medicine three times a day.|тэйк зис мэдсн сри: таймз э дэй|Бұл дәріні күніне үш рет ішіңіз.
+Науқас|Thank you, doctor.|сәңк ю:, доктэ|Рақмет, дәрігер.`},
+{id:'a-hotel',aud:'adult',title:'Қонақүйде',icon:'🏨',data:`
+Қонақ|Hello, I have a reservation.|һэлоу, ай һәв э рэзэвэйшн|Сәлеметсіз бе, менде брондау бар.
+Әкімші|What is your name, please?|уот из ё: нэйм, пли:з?|Атыңыз кім?
+Қонақ|My name is Nurlan Sadykov.|май нэйм из Нұрлан Садықов|Менің атым Нұрлан Садықов.
+Әкімші|Can I see your passport?|кән ай си: ё: па:спо:т?|Төлқұжатыңызды көрсетесіз бе?
+Қонақ|Here it is. What time is breakfast?|һиэ ит из. уот тайм из брэкфэст?|Міне. Таңғы ас сағат нешеде?
+Әкімші|From seven to ten.|фром сэвн ту тэн|Жетіден онға дейін.
+Әкімші|Your room is on the third floor.|ё: ру:м из он зэ сө:д фло:|Бөлмеңіз үшінші қабатта.`},
+{id:'a-work',aud:'adult',title:'Жұмыста',icon:'💼',data:`
+Әріптес 1|Good morning! Do we have a meeting today?|гұд мо:нің! ду: уи: һәв э ми:тің тудэй?|Қайырлы таң! Бүгін жиналыс бар ма?
+Әріптес 2|Yes, at two o'clock.|йес, әт ту: эклок|Иә, сағат екіде.
+Әріптес 1|Can you send me the report?|кән ю: сэнд ми: зэ рипо:т?|Маған есепті жібере аласыз ба?
+Әріптес 2|Sure, I will send it by email.|шұэ, ай уил сэнд ит бай и:мэйл|Әрине, электрондық поштамен жіберемін.
+Әріптес 1|When is the deadline?|уэн из зэ дэдлайн?|Соңғы мерзімі қашан?
+Әріптес 2|On Friday.|он фрайдэй|Жұма күні.
+Әріптес 1|Great, thanks for your help.|грэйт, сәңкс фо: ё: һэлп|Тамаша, көмегіңізге рақмет.`},
+{id:'a-phone',aud:'adult',title:'Телефонмен',icon:'📞',data:`
+Аида|Hello, this is Aida speaking.|һэлоу, зис из Аида спи:кің|Сәлеметсіз бе, Аида тыңдап тұр.
+Қоңырау шалушы|Hello, can I speak to Mr Brown?|һэлоу, кән ай спи:к ту мистэ Браун?|Сәлеметсіз бе, Браун мырзамен сөйлесуге бола ма?
+Аида|Sorry, he is not here now.|сори, һи: из нот һиэ нау|Кешіріңіз, ол қазір жоқ.
+Қоңырау шалушы|Can I leave a message?|кән ай ли:в э мэсиж?|Хабарлама қалдыруға бола ма?
+Аида|Of course. What is your number?|ов ко:с. уот из ё: намбэ?|Әрине. Нөміріңіз қандай?
+Қоңырау шалушы|Please ask him to call me back.|пли:з а:ск һим ту ко:л ми: бәк|Маған қайта қоңырау шалуын өтінемін.
+Аида|Okay, I will tell him.|оукэй, ай уил тэл һим|Жарайды, оған айтамын.`}
+];
+
+/* ===================== ДЕРЕКТЕРДІ ӨҢДЕУ ===================== */
+const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const TOPICS = RAW_TOPICS.map(t => ({...t, words: t.data.trim().split('\n').map(line => {
+  const [en,tr,kk,lvl,em] = line.split('|').map(s => s.trim());
+  return {id:t.id+'.'+slug(en), en, tr, kk, lvl:+lvl||1, em:em||t.icon, topic:t.id};
+})}));
+DIALOGS.forEach(d => {
+  d.lines = d.data.trim().split('\n').map(line => { const [sp,en,tr,kk] = line.split('|').map(s => s.trim()); return {sp,en,tr,kk}; });
+});
+
+/* ===================== КҮЙ (localStorage) ===================== */
+const KEY = 'agylshyn-onai-v1';
+const DEFAULTS = {mode:null, learned:{}, stars:0, tests:[], days:[], slow:false, theme:null};
+function load(){ let d = {}; try { d = JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e) {} return Object.assign({}, DEFAULTS, d); }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e) {} }
+let S = load();
+
+const pad = n => String(n).padStart(2,'0');
+const ymd = d => d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const today = () => ymd(new Date());
+function markActive(){ const t = today(); if (!S.days.includes(t)) { S.days.push(t); S.days = S.days.slice(-400); } save(); }
+function streak(){
+  const d = new Date(); let n = 0;
+  if (!S.days.includes(ymd(d))) d.setDate(d.getDate()-1);
+  while (S.days.includes(ymd(d))) { n++; d.setDate(d.getDate()-1); }
+  return n;
+}
+
+/* ===================== КӨМЕКШІЛЕР ===================== */
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const shuffle = a => { a = [...a]; for (let i=a.length-1;i>0;i--) { const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]] = [a[j],a[i]]; } return a; };
+const pick = a => a[Math.floor(Math.random()*a.length)];
+const LVL = {1:'Қарапайым', 2:'Күрделі'};
+const isKid = () => S.mode === 'kid';
+const availTopics = () => TOPICS.filter(t => t.aud === 'all' || t.aud === (S.mode || 'adult'));
+const availWords = () => availTopics().flatMap(t => t.words);
+const topicById = id => TOPICS.find(t => t.id === id);
+const availDialogs = () => DIALOGS.filter(d => d.aud === (S.mode || 'adult'));
+const praise = () => pick(isKid() ? ['Жарайсың!','Керемет!','Супер!'] : ['Дұрыс!','Өте жақсы!']);
+const starsFor = r => r >= .9 ? 3 : r >= .7 ? 2 : r >= .4 ? 1 : 0;
+const starsHTML = (n, max=3) => `<span class="stars" aria-label="${n} жұлдыз">${'★'.repeat(n)}<span class="off">${'★'.repeat(max-n)}</span></span>`;
+const learnedCount = words => words.filter(w => S.learned[w.id]).length;
+const SPK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>';
+const sayBtn = (text, label) => `<button class="say" data-say="${esc(text)}" aria-label="Тыңдау: ${esc(label||text)}" title="Тыңдау">${SPK}</button>`;
+
+let toastTimer;
+function toast(msg){ const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), 1800); }
+
+/* ===================== ДЫБЫСТАУ ===================== */
+const hasTTS = 'speechSynthesis' in window;
+let voices = [];
+function loadVoices(){
+  if (!hasTTS) return;
+  const all = speechSynthesis.getVoices();
+  voices = all.filter(v => /^en[-_](US|GB)/i.test(v.lang));
+  if (!voices.length) voices = all.filter(v => /^en/i.test(v.lang));
+  // Сапалырақ дауыстарды алға шығару
+  voices.sort((a,b) => (/google|natural|online|samantha|daniel/i.test(b.name)?1:0) - (/google|natural|online|samantha|daniel/i.test(a.name)?1:0));
+}
+if (hasTTS) { loadVoices(); speechSynthesis.onvoiceschanged = loadVoices; }
+function utter(text, pitch=1, vi=0){
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US';
+  if (voices.length) { const v = voices[vi % voices.length]; u.voice = v; u.lang = v.lang; }
+  u.rate = S.slow ? 0.62 : 0.92;
+  u.pitch = pitch;
+  return u;
+}
+function speak(text){
+  if (!hasTTS) { toast('Бұл браузер дыбыстауды қолдамайды'); return; }
+  speechSynthesis.cancel();
+  speechSynthesis.speak(utter(text));
+}
+function speakSeq(items, onLine, onDone){
+  if (!hasTTS) { toast('Бұл браузер дыбыстауды қолдамайды'); return; }
+  speechSynthesis.cancel();
+  items.forEach((it, i) => {
+    const u = utter(it.text, it.pitch, it.vi);
+    u.onstart = () => onLine && onLine(i);
+    if (i === items.length-1) { u.onend = () => onDone && onDone(); u.onerror = u.onend; }
+    speechSynthesis.speak(u);
+  });
+}
+function stopSpeech(){ if (hasTTS) speechSynthesis.cancel(); }
+
+/* ===================== ЖАЛПЫ ОҚИҒАЛАР ===================== */
+document.addEventListener('click', e => {
+  const s = e.target.closest('[data-say]');
+  if (s) { e.stopPropagation(); speak(s.dataset.say); return; }
+  const l = e.target.closest('[data-learn]');
+  if (l) { toggleLearn(l.dataset.learn); }
+});
+function toggleLearn(id){
+  if (S.learned[id]) delete S.learned[id]; else { S.learned[id] = true; toast(isKid() ? 'Жарайсың! ⭐' : 'Үйренілді деп белгіленді'); }
+  markActive();
+  const on = !!S.learned[id];
+  $$(`[data-learn="${id}"]`).forEach(b => {
+    b.setAttribute('aria-pressed', on);
+    b.textContent = on ? '✓ Үйренілді' : 'Үйрендім';
+    const card = b.closest('.wcard'); if (card) card.classList.toggle('is-learned', on);
+  });
+}
+
+/* ===================== ШАПКА ===================== */
+const NAV = [['home','Басты бет'],['words','Сөздік'],['phrases','Фразалар'],['cards','Карточкалар'],['quiz','Тест'],['sounds','Айтылым'],['progress','Жетістіктер']];
+$('#nav').innerHTML = NAV.map(([id,label]) => `<a href="#${id}" data-nav="${id}">${label}</a>`).join('');
+
+function applyChrome(){
+  document.documentElement.classList.toggle('kid', isKid());
+  if (S.theme) document.documentElement.setAttribute('data-theme', S.theme); else document.documentElement.removeAttribute('data-theme');
+  $('#modeBtn').innerHTML = isKid()
+    ? '<span aria-hidden="true">🧒</span><span class="tl">Балалар 5–16</span>'
+    : '<span aria-hidden="true">🧑‍💼</span><span class="tl">Ересектер 17–60</span>';
+  $('#modeBtn').setAttribute('aria-label', 'Режим: ' + (isKid() ? 'Балалар' : 'Ересектер') + '. Ауыстыру');
+  $('#slowBtn').setAttribute('aria-pressed', S.slow);
+}
+$('#slowBtn').addEventListener('click', () => { S.slow = !S.slow; save(); applyChrome(); toast(S.slow ? 'Баяу дауыс қосылды 🐢' : 'Қалыпты жылдамдық'); });
+$('#themeBtn').addEventListener('click', () => {
+  const dark = S.theme ? S.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  S.theme = dark ? 'light' : 'dark'; save(); applyChrome();
+});
+$('#modeBtn').addEventListener('click', () => openModeModal());
+
+let lastFocus = null;
+function openModeModal(){
+  lastFocus = document.activeElement;
+  const m = $('#modeModal'); m.hidden = false;
+  $$('[data-mode]', m).forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === S.mode));
+  ($(`[data-mode="${S.mode}"]`, m) || $('[data-mode]', m)).focus();
+}
+function closeModeModal(){ $('#modeModal').hidden = true; if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+$$('#modeModal [data-mode]').forEach(b => b.addEventListener('click', () => {
+  S.mode = b.dataset.mode; save();
+  C.deck = null; C.result = null; Q.qs = null; Q.result = null; W.topic = 'all'; P.dlg = null;
+  closeModeModal(); applyChrome(); route();
+  toast(isKid() ? 'Балалар режимі қосылды 🧒' : 'Ересектер режимі қосылды');
+}));
+$('#modeModal').addEventListener('keydown', e => {
+  if (e.key === 'Escape' && S.mode) closeModeModal();
+  if (e.key === 'Tab') { const f = $$('#modeModal button'); const first = f[0], last = f[f.length-1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); } }
+});
+$('#modeModal').addEventListener('click', e => { if (e.target.id === 'modeModal' && S.mode) closeModeModal(); });
+
+/* ===================== МАРШРУТТАУ ===================== */
+const app = $('#app');
+const ROUTES = {home:pageHome, words:pageWords, phrases:pagePhrases, cards:pageCards, quiz:pageQuiz, sounds:pageSounds, progress:pageProgress};
+function route(){
+  stopSpeech();
+  const r = location.hash.slice(1);
+  const id = ROUTES[r] ? r : 'home';
+  $$('[data-nav]').forEach(a => { const on = a.dataset.nav === id; a.classList.toggle('active', on); if (on) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+  ROUTES[id]();
+  const active = $('.nav a.active'); if (active) active.scrollIntoView({block:'nearest', inline:'nearest'});
+}
+window.addEventListener('hashchange', () => { route(); window.scrollTo(0,0); app.focus({preventScroll:true}); });
+
+function topicOptions(sel, allLabel='Барлық тақырыптар'){
+  return `<option value="all">${allLabel}</option>` + availTopics().map(t => `<option value="${t.id}" ${t.id===sel?'selected':''}>${t.icon} ${esc(t.name)}</option>`).join('');
+}
+function seg(name, items, val, label){
+  return `<div class="seg" role="radiogroup" aria-label="${esc(label)}">` + items.map(([v,l]) =>
+    `<label><input type="radio" name="${name}" value="${v}" ${String(v)===String(val)?'checked':''}><span>${l}</span></label>`).join('') + '</div>';
+}
+function statTiles(){
+  const words = availWords();
+  return `
+    <div class="stat"><b>${learnedCount(words)} <small class="muted" style="font-size:.9rem">/ ${words.length}</small></b><span>Үйренген сөз</span></div>
+    <div class="stat"><b style="color:var(--gold-ink)">★ ${S.stars}</b><span>Жұлдыз</span></div>
+    <div class="stat"><b>${S.tests.length}</b><span>Тапсырылған тест</span></div>
+    <div class="stat"><b>🔥 ${streak()}</b><span>Қатарынан күн</span></div>`;
+}
+
+/* ===================== БАСТЫ БЕТ ===================== */
+function wordOfDay(){
+  const words = availWords();
+  const d = new Date();
+  const day = Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 864e5);
+  return words[(day * 7919) % words.length];
+}
+function pageHome(){
+  const k = isKid();
+  const w = wordOfDay();
+  const learned = !!S.learned[w.id];
+  const steps = [
+    ['words','Сөздік', k ? 'Жаңа сөздерді тыңда да, үйрен' : 'Жаңа сөздерді тыңдап, үйреніңіз'],
+    ['cards','Карточкалар', k ? 'Карточканы аударып, есіңде сақта' : 'Сөздерді карточкамен бекітіңіз'],
+    ['phrases','Фразалар', k ? 'Диалогтарды тыңда, қайтала' : 'Дайын диалогтармен жаттығыңыз'],
+    ['quiz','Тест', k ? 'Өзіңді тексеріп, жұлдыз жина ⭐' : 'Біліміңізді тексеріңіз']
+  ];
+  app.innerHTML = `
+  <section class="hero">
+    <h1>${k ? 'Сәлем, досым! 👋' : 'Ағылшын тілі — күнделікті өмірге'}</h1>
+    <p>${k
+      ? 'Ағылшын тілін ойнай отырып үйренейік! Сөздерді тыңда, карточкаларды аудар, тест тапсырып жұлдыз жина.'
+      : 'Күнделікті қарым-қатынасқа қажетті сөздер, дайын фразалар мен диалогтар. Тыңдаңыз, қайталаңыз, өзіңізді тексеріңіз.'}</p>
+    <div class="hero-actions">
+      <a class="btn gold" href="#words">${k ? 'Бастайық!' : 'Сөздерді үйрену'}</a>
+      <a class="btn" href="#quiz">Тест тапсыру</a>
+    </div>
+  </section>
+  <div class="home-grid">
+    <section class="card" aria-labelledby="wotdH">
+      <h2 class="eyebrow" id="wotdH">Бүгінгі сөз</h2>
+      <div class="wotd-main">
+        ${k ? `<span class="wotd-emoji" aria-hidden="true">${w.em}</span>` : ''}
+        <div>
+          <div style="display:flex;align-items:center;gap:10px"><span class="wotd-en">${esc(w.en)}</span>${sayBtn(w.en)}</div>
+          <div class="wotd-tr">[${esc(w.tr)}]</div>
+        </div>
+      </div>
+      <div class="wotd-kk">${esc(w.kk)}</div>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <span class="lvl lvl${w.lvl}">${LVL[w.lvl]}</span>
+        <span class="muted" style="font-size:.9rem">${esc(topicById(w.topic).name)}</span>
+        <button class="learn" data-learn="${w.id}" aria-pressed="${learned}">${learned ? '✓ Үйренілді' : 'Үйрендім'}</button>
+      </div>
+    </section>
+    <section class="card" aria-labelledby="progH">
+      <h2 class="eyebrow" id="progH">Менің прогресім</h2>
+      <div class="stats">${statTiles()}</div>
+      <p style="margin:12px 0 0"><a href="#progress">Толығырақ →</a></p>
+    </section>
+  </div>
+  <section aria-labelledby="pathH">
+    <h2 id="pathH">${k ? 'Қалай үйренеміз?' : 'Ұсынылатын оқу жолы'}</h2>
+    <ol class="path">${steps.map(([h,t,d],i) => `<li><a href="#${h}"><span class="num">${i+1}</span><b>${t}</b><span>${d}</span></a></li>`).join('')}</ol>
+  </section>`;
+}
+
+/* ===================== СӨЗДІК ===================== */
+const W = {topic:'all', lvl:0, q:''};
+function pageWords(){
+  if (W.topic !== 'all' && !availTopics().some(t => t.id === W.topic)) W.topic = 'all';
+  const topics = availTopics();
+  app.innerHTML = `
+  <div class="page-head"><h1>Сөздік</h1>
+  <p class="lead">${topics.length} тақырып. Сөзді тыңдау үшін 🔊 батырмасын басыңыз. Транскрипцияда «:» — дыбысты созып айту керек.</p></div>
+  <div class="filters card">
+    <label class="sr" for="wq">Іздеу</label>
+    <input type="search" id="wq" placeholder="Іздеу: ағылшынша немесе қазақша…" value="${esc(W.q)}" autocomplete="off">
+    <div class="chips" role="group" aria-label="Тақырып">
+      <button class="chip" data-topic="all" aria-pressed="${W.topic==='all'}">Барлығы</button>
+      ${topics.map(t => `<button class="chip" data-topic="${t.id}" aria-pressed="${W.topic===t.id}">${t.icon} ${esc(t.name)}</button>`).join('')}
+    </div>
+    <div class="frow"><span class="lbl">Деңгей:</span>${seg('wlvl', [[0,'Барлығы'],[1,'Қарапайым'],[2,'Күрделі']], W.lvl, 'Деңгей')}</div>
+  </div>
+  <p class="count" id="wcount" aria-live="polite"></p>
+  <div class="wgrid" id="wlist"></div>`;
+  $('#wq').addEventListener('input', e => { W.q = e.target.value; renderWordList(); });
+  $$('[data-topic]').forEach(b => b.addEventListener('click', () => {
+    W.topic = b.dataset.topic; $$('[data-topic]').forEach(x => x.setAttribute('aria-pressed', x === b)); renderWordList();
+  }));
+  $$('input[name=wlvl]').forEach(r => r.addEventListener('change', () => { W.lvl = +r.value; renderWordList(); }));
+  renderWordList();
+}
+function renderWordList(){
+  const q = W.q.trim().toLowerCase();
+  const k = isKid();
+  const list = (W.topic === 'all' ? availWords() : topicById(W.topic).words)
+    .filter(w => !W.lvl || w.lvl === W.lvl)
+    .filter(w => !q || w.en.toLowerCase().includes(q) || w.kk.toLowerCase().includes(q));
+  const learned = learnedCount(list);
+  $('#wcount').textContent = `${list.length} сөз · ${learned} үйренілді`;
+  $('#wlist').innerHTML = list.length ? list.map(w => {
+    const on = !!S.learned[w.id];
+    return `<article class="wcard ${on?'is-learned':''}">
+      ${k ? `<div class="wemoji" aria-hidden="true">${w.em}</div>` : ''}
+      <div class="wbody">
+        <div class="wtop"><span class="wen" lang="en">${esc(w.en)}</span>${sayBtn(w.en)}</div>
+        <div class="wtr">[${esc(w.tr)}]</div>
+        <div class="wkk">${esc(w.kk)}</div>
+        <div class="wfoot"><span class="lvl lvl${w.lvl}">${LVL[w.lvl]}</span>
+        <button class="learn" data-learn="${w.id}" aria-pressed="${on}">${on ? '✓ Үйренілді' : 'Үйрендім'}</button></div>
+      </div></article>`;
+  }).join('') : `<div class="empty" style="grid-column:1/-1">Ештеңе табылмады 🔍</div>`;
+}
+
+/* ===================== ФРАЗАЛАР ===================== */
+const P = {dlg:null, hide:false, playing:false};
+function pagePhrases(){
+  const dialogs = availDialogs();
+  if (!dialogs.some(d => d.id === P.dlg)) P.dlg = dialogs[0].id;
+  const d = dialogs.find(x => x.id === P.dlg);
+  const speakers = [...new Set(d.lines.map(l => l.sp))];
+  app.innerHTML = `
+  <div class="page-head"><h1>Фразалар мен диалогтар</h1>
+  <p class="lead">Өмірлік жағдайларға арналған диалогтар. Әр сөйлемді тыңдап, дауыстап қайталаңыз.</p></div>
+  <div class="chips" role="group" aria-label="Диалог">
+    ${dialogs.map(x => `<button class="chip" data-dlg="${x.id}" aria-pressed="${x.id===d.id}">${x.icon} ${esc(x.title)}</button>`).join('')}
+  </div>
+  <div class="dlg-head">
+    <h2 style="margin:0">${d.icon} ${esc(d.title)}</h2>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn" id="hideBtn" aria-pressed="${P.hide}">${P.hide ? '👁 Аударманы көрсету' : '🙈 Аударманы жасыру'}</button>
+      <button class="btn primary" id="playAll">▶ Бүкіл диалогты тыңдау</button>
+    </div>
+  </div>
+  ${P.hide ? '<p class="note">Өзіңізді тексеріңіз: аударманы есіңізге түсіріп, содан кейін бұлыңғыр мәтінді басыңыз.</p>' : ''}
+  <ol class="lines" id="lines">
+    ${d.lines.map((l,i) => { const si = speakers.indexOf(l.sp) % 2; return `
+    <li class="line s${si}" data-i="${i}">
+      <div class="spk" title="${esc(l.sp)}">${esc(l.sp)}</div>
+      <div class="bubble">
+        <div class="len"><span lang="en">${esc(l.en)}</span>${sayBtn(l.en)}</div>
+        <div class="ltr">[${esc(l.tr)}]</div>
+        <div class="lkk ${P.hide?'blur':''}" ${P.hide?'tabindex="0" role="button" aria-label="Аударманы ашу"':''}>${esc(l.kk)}</div>
+      </div></li>`; }).join('')}
+  </ol>`;
+  $$('[data-dlg]').forEach(b => b.addEventListener('click', () => { P.dlg = b.dataset.dlg; stopSpeech(); pagePhrases(); }));
+  $('#hideBtn').addEventListener('click', () => { P.hide = !P.hide; stopSpeech(); pagePhrases(); });
+  $$('.lkk.blur').forEach(el => {
+    const reveal = () => { el.classList.remove('blur'); el.removeAttribute('role'); el.removeAttribute('tabindex'); el.removeAttribute('aria-label'); };
+    el.addEventListener('click', reveal);
+    el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); reveal(); } });
+  });
+  const playBtn = $('#playAll');
+  const clear = () => $$('.line').forEach(x => x.classList.remove('playing'));
+  playBtn.addEventListener('click', () => {
+    if (P.playing) { P.playing = false; stopSpeech(); clear(); playBtn.textContent = '▶ Бүкіл диалогты тыңдау'; return; }
+    P.playing = true; playBtn.textContent = '■ Тоқтату';
+    speakSeq(d.lines.map(l => { const si = speakers.indexOf(l.sp) % 2; return {text:l.en, pitch: si ? 1.3 : 0.9, vi: si}; }),
+      i => { clear(); const el = $(`.line[data-i="${i}"]`); if (el) { el.classList.add('playing'); el.scrollIntoView({block:'nearest', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}); } },
+      () => { P.playing = false; clear(); if (document.body.contains(playBtn)) playBtn.textContent = '▶ Бүкіл диалогты тыңдау'; });
+  });
+  P.playing = false;
+}
+
+/* ===================== КАРТОЧКАЛАР ===================== */
+const C = {topic:'all', lvl:0, dir:'en', unl:false, deck:null, i:0, known:0, flipped:false, result:null};
+function cardPool(){
+  return (C.topic === 'all' ? availWords() : topicById(C.topic).words)
+    .filter(w => !C.lvl || w.lvl === C.lvl)
+    .filter(w => !C.unl || !S.learned[w.id]);
+}
+function pageCards(){
+  if (C.topic !== 'all' && !availTopics().some(t => t.id === C.topic)) C.topic = 'all';
+  if (C.result) return cardResult();
+  if (C.deck) return cardSession();
+  app.innerHTML = `
+  <div class="page-head"><h1>Карточкалар</h1>
+  <p class="lead">Карточканы басып аударыңыз. Сөзді білсеңіз — «Білемін», әлі есте жоқ болса — «Тағы қайталаймын». Бір колодада 20 сөзге дейін.</p></div>
+  <form class="card setup" id="cset">
+    <div class="field"><label for="ct">Тақырып</label><select id="ct">${topicOptions(C.topic)}</select></div>
+    <div class="field"><span class="lbl">Деңгей</span>${seg('clvl', [[0,'Барлығы'],[1,'Қарапайым'],[2,'Күрделі']], C.lvl, 'Деңгей')}</div>
+    <div class="field"><span class="lbl">Бағыты</span>${seg('cdir', [['en','EN → KZ'],['kk','KZ → EN']], C.dir, 'Бағыты')}</div>
+    <label class="check"><input type="checkbox" id="cunl" ${C.unl?'checked':''}> Тек үйренілмеген сөздер</label>
+    <p class="muted" id="ccount" aria-live="polite"></p>
+    <button class="btn primary big" type="submit" id="cstart">Бастау</button>
+  </form>`;
+  const upd = () => {
+    const n = cardPool().length;
+    $('#ccount').textContent = n ? `Таңдалған сөздер: ${n} (колодада ${Math.min(n,20)})` : 'Бұл баптауда сөз жоқ. Басқа тақырып таңдаңыз.';
+    $('#cstart').disabled = !n;
+  };
+  $('#ct').addEventListener('change', e => { C.topic = e.target.value; upd(); });
+  $$('input[name=clvl]').forEach(r => r.addEventListener('change', () => { C.lvl = +r.value; upd(); }));
+  $$('input[name=cdir]').forEach(r => r.addEventListener('change', () => { C.dir = r.value; }));
+  $('#cunl').addEventListener('change', e => { C.unl = e.target.checked; upd(); });
+  $('#cset').addEventListener('submit', e => {
+    e.preventDefault();
+    const pool = cardPool(); if (!pool.length) return;
+    C.deck = shuffle(pool).slice(0, 20); C.i = 0; C.known = 0; C.flipped = false;
+    cardSession();
+  });
+  upd();
+}
+function cardSession(){
+  const w = C.deck[C.i], k = isKid();
+  const enSide = `<div class="fc-main" lang="en">${esc(w.en)}</div><div class="fc-tr">[${esc(w.tr)}]</div>`;
+  const kkSide = `<div class="fc-main">${esc(w.kk)}</div>`;
+  const emoji = k ? `<div class="fc-emoji" aria-hidden="true">${w.em}</div>` : '';
+  const front = C.dir === 'en' ? emoji + enSide : emoji + kkSide;
+  const back = C.dir === 'en' ? kkSide + `<div class="fc-tr" style="margin-top:6px">${esc(w.en)}</div>` : enSide;
+  app.innerHTML = `
+  <div class="sess-head"><button class="btn ghost" id="cquit">← Шығу</button><span>${C.i+1} / ${C.deck.length}</span></div>
+  <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="${C.deck.length}" aria-valuenow="${C.i}"><span style="width:${C.i/C.deck.length*100}%"></span></div>
+  <div class="flip ${C.flipped?'flipped':''}" id="flip" role="button" tabindex="0" aria-label="Карточканы аудару">
+    <div class="flip-inner">
+      <div class="face front" aria-hidden="${C.flipped}">${front}<div class="hint">Аудару үшін басыңыз</div></div>
+      <div class="face back" aria-hidden="${!C.flipped}">${back}<div class="hint">Қайта аудару үшін басыңыз</div></div>
+    </div>
+  </div>
+  <div class="card-actions"><button class="btn" data-say="${esc(w.en)}">${SPK.replace('<svg','<svg width="20" height="20"')} Тыңдау</button></div>
+  <div class="card-actions two">
+    <button class="btn" id="again">↻ Тағы қайталаймын</button>
+    <button class="btn ok" id="know">✓ Білемін</button>
+  </div>`;
+  const flip = $('#flip');
+  const doFlip = () => {
+    C.flipped = !C.flipped; flip.classList.toggle('flipped', C.flipped);
+    $('.front', flip).setAttribute('aria-hidden', C.flipped); $('.back', flip).setAttribute('aria-hidden', !C.flipped);
+  };
+  flip.addEventListener('click', doFlip);
+  flip.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); doFlip(); } });
+  $('#cquit').addEventListener('click', () => { C.deck = null; pageCards(); });
+  $('#again').addEventListener('click', () => nextCard(false));
+  $('#know').addEventListener('click', () => nextCard(true));
+  flip.focus({preventScroll:true});
+}
+function nextCard(knew){
+  const w = C.deck[C.i];
+  if (knew) { C.known++; S.learned[w.id] = true; }
+  markActive();
+  C.i++; C.flipped = false;
+  if (C.i >= C.deck.length) {
+    const stars = starsFor(C.known / C.deck.length);
+    S.stars += stars; save();
+    C.result = {known:C.known, total:C.deck.length, stars};
+    C.deck = null;
+    return cardResult();
+  }
+  cardSession();
+}
+function cardResult(){
+  const r = C.result, k = isKid();
+  app.innerHTML = `
+  <div class="card result">
+    <h1>${r.stars >= 2 ? praise() : (k ? 'Жақсы талпыныс!' : 'Колода аяқталды')}</h1>
+    <div class="big-stars" aria-label="${r.stars} жұлдыз">${'★'.repeat(r.stars)}<span class="off">${'★'.repeat(3-r.stars)}</span></div>
+    <p class="score">${r.known} / ${r.total} сөзді білесіз</p>
+    <p class="muted">${r.known === r.total ? 'Барлық сөз үйренілді деп белгіленді!' : 'Қиын сөздерді тағы бір рет қайталап көріңіз.'}</p>
+    <div class="card-actions">
+      <button class="btn primary" id="cagain">↻ Жаңа колода</button>
+      <button class="btn" id="csetup">Басқа баптау</button>
+      <a class="btn" href="#quiz">Тест тапсыру →</a>
+    </div>
+  </div>`;
+  $('#cagain').addEventListener('click', () => {
+    C.result = null; const pool = cardPool();
+    if (!pool.length) return pageCards();
+    C.deck = shuffle(pool).slice(0,20); C.i = 0; C.known = 0; C.flipped = false; cardSession();
+  });
+  $('#csetup').addEventListener('click', () => { C.result = null; pageCards(); });
+}
+
+/* ===================== ТЕСТ ===================== */
+const QTYPES = {
+  mix:   {icon:'🎲', name:'Аралас', desc:'Барлық тапсырма түрі аралас'},
+  tr:    {icon:'🇰🇿', name:'Аудармасын тап', desc:'Ағылшын сөзінің қазақша аудармасын таңдаңыз'},
+  en:    {icon:'🇬🇧', name:'Ағылшынша тап', desc:'Қазақ сөзінің ағылшынша баламасын таңдаңыз'},
+  listen:{icon:'🎧', name:'Тыңда да тап', desc:'Сөзді тыңдап, жазылуын таңдаңыз'},
+  build: {icon:'🧩', name:'Сөйлем құрастыр', desc:'Сөздерден сөйлем құраңыз (диалогтар бойынша)'}
+};
+const Q = {type:'mix', topic:'all', qs:null, i:0, score:0, answered:false, built:[], result:null};
+function buildLines(){
+  return availDialogs().flatMap(d => d.lines).filter(l => { const n = l.en.split(/\s+/).length; return n >= 3 && n <= 7; });
+}
+function tokensOf(en){ return en.replace(/[.,!?]/g, '').split(/\s+/).filter(Boolean); }
+function makeQuestions(){
+  const base = Q.topic === 'all' ? availWords() : topicById(Q.topic).words;
+  const all = availWords();
+  const lines = shuffle(buildLines());
+  let wordPool = shuffle(base);
+  const qs = [];
+  for (let n = 0; n < 10; n++) {
+    const t = Q.type === 'mix' ? pick(['tr','en','listen','build']) : Q.type;
+    if (t === 'build') {
+      const l = lines[n % lines.length];
+      const tokens = tokensOf(l.en);
+      let order = shuffle(tokens.map((_,i) => i));
+      for (let g = 0; g < 5 && order.every((v,i) => v === i); g++) order = shuffle(order);
+      qs.push({t, line:l, tokens, order});
+      continue;
+    }
+    if (!wordPool.length) wordPool = shuffle(base);
+    const w = wordPool.pop();
+    const field = t === 'tr' ? 'kk' : 'en';
+    const seen = new Set([w[field].toLowerCase(), w.en.toLowerCase(), w.kk.toLowerCase()]);
+    const distractors = [];
+    for (const src of [shuffle(base), shuffle(all)]) {
+      for (const x of src) {
+        if (distractors.length >= 3) break;
+        const key = x[field].toLowerCase();
+        if (seen.has(key) || seen.has(x.en.toLowerCase()) || seen.has(x.kk.toLowerCase())) continue;
+        seen.add(key); distractors.push(x);
+      }
+    }
+    const opts = shuffle([{label:w[field], correct:true}, ...distractors.map(x => ({label:x[field], correct:false}))]);
+    qs.push({t, w, opts});
+  }
+  return qs;
+}
+function pageQuiz(){
+  if (Q.topic !== 'all' && !availTopics().some(t => t.id === Q.topic)) Q.topic = 'all';
+  if (Q.result) return quizResult();
+  if (Q.qs) return quizQuestion();
+  app.innerHTML = `
+  <div class="page-head"><h1>Тест</h1>
+  <p class="lead">10 сұрақ. Тапсырма түрін және тақырыпты таңдаңыз. 90% және одан жоғары — ★★★, 70% — ★★, 40% — ★.</p></div>
+  <h2 class="eyebrow">Тапсырма түрі</h2>
+  <div class="types" role="group" aria-label="Тапсырма түрі">
+    ${Object.entries(QTYPES).map(([id,t]) => `<button class="type" data-qtype="${id}" aria-pressed="${Q.type===id}"><span class="ti" aria-hidden="true">${t.icon}</span><b>${t.name}</b><span>${t.desc}</span></button>`).join('')}
+  </div>
+  <div class="card setup">
+    <div class="field"><label for="qt">Тақырып</label><select id="qt">${topicOptions(Q.topic)}</select>
+    <small class="muted" id="qtnote"></small></div>
+    <button class="btn primary big" id="qstart">Тестті бастау</button>
+  </div>`;
+  const note = () => { $('#qtnote').textContent = Q.type === 'build' ? '«Сөйлем құрастыр» тапсырмасы диалогтардан алынады.' : ''; };
+  $$('[data-qtype]').forEach(b => b.addEventListener('click', () => {
+    Q.type = b.dataset.qtype; $$('[data-qtype]').forEach(x => x.setAttribute('aria-pressed', x === b)); note();
+  }));
+  $('#qt').addEventListener('change', e => { Q.topic = e.target.value; });
+  $('#qstart').addEventListener('click', () => {
+    Q.qs = makeQuestions(); Q.i = 0; Q.score = 0; Q.answered = false; Q.built = [];
+    quizQuestion();
+  });
+  note();
+}
+function quizQuestion(){
+  const q = Q.qs[Q.i], k = isKid();
+  let body = '';
+  if (q.t === 'tr') {
+    body = `<div class="qprompt">${k ? `<div class="q-emoji" aria-hidden="true">${q.w.em}</div>` : ''}
+      <div class="q-ask">Бұл сөздің аудармасы қандай?</div>
+      <div style="display:flex;justify-content:center;align-items:center;gap:10px"><span class="q-word" lang="en">${esc(q.w.en)}</span>${sayBtn(q.w.en)}</div>
+      <div class="muted">[${esc(q.w.tr)}]</div></div>`;
+  } else if (q.t === 'en') {
+    body = `<div class="qprompt">${k ? `<div class="q-emoji" aria-hidden="true">${q.w.em}</div>` : ''}
+      <div class="q-ask">Ағылшынша қалай болады?</div>
+      <div class="q-word">${esc(q.w.kk)}</div></div>`;
+  } else if (q.t === 'listen') {
+    body = `<div class="qprompt"><div class="q-ask" style="margin-bottom:12px">Тыңдап, естіген сөзді таңдаңыз</div>
+      <button class="listen-big" data-say="${esc(q.w.en)}" aria-label="Сөзді тыңдау">${SPK}</button></div>`;
+  } else {
+    body = `<div class="qprompt"><div class="q-ask">Сөйлемді құрастырыңыз:</div>
+      <div class="q-word" style="font-size:1.35rem;color:var(--text)">${esc(q.line.kk)}</div></div>
+      <div class="build-target" id="bt" aria-label="Сіздің сөйлеміңіз"></div>
+      <div class="build-pool" id="bp" aria-label="Сөздер"></div>
+      <div class="qnav"><button class="btn primary" id="check" disabled>Тексеру</button></div>`;
+  }
+  const opts = q.opts ? `<div class="opts">${q.opts.map((o,i) => `<button class="opt" data-opt="${i}" ${q.t!=='tr'?'lang="en"':''}>${esc(o.label)}</button>`).join('')}</div>` : '';
+  app.innerHTML = `
+  <div class="sess-head"><button class="btn ghost" id="qquit">← Шығу</button><span>Сұрақ ${Q.i+1} / ${Q.qs.length}</span></div>
+  <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="${Q.qs.length}" aria-valuenow="${Q.i}"><span style="width:${Q.i/Q.qs.length*100}%"></span></div>
+  <div class="card qcard">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><span class="qtype">${QTYPES[q.t].icon} ${QTYPES[q.t].name}</span><span class="muted" style="font-weight:800">Ұпай: ${Q.score}</span></div>
+    ${body}${opts}
+    <div class="feedback" id="fb" aria-live="polite"></div>
+    <div class="qnav"><button class="btn primary" id="next" hidden>${Q.i+1 < Q.qs.length ? 'Келесі →' : 'Нәтижені көру'}</button></div>
+  </div>`;
+  Q.answered = false;
+  $('#qquit').addEventListener('click', () => { Q.qs = null; pageQuiz(); });
+  $('#next').addEventListener('click', () => {
+    Q.i++;
+    if (Q.i >= Q.qs.length) return finishQuiz();
+    quizQuestion();
+  });
+  if (q.opts) $$('[data-opt]').forEach(b => b.addEventListener('click', () => answerOpt(q, +b.dataset.opt)));
+  if (q.t === 'listen') setTimeout(() => { if (Q.qs && Q.qs[Q.i] === q && !Q.answered) speak(q.w.en); }, 350);
+  if (q.t === 'build') { Q.built = []; renderBuild(q); $('#check').addEventListener('click', () => checkBuild(q)); }
+}
+function answerOpt(q, idx){
+  if (Q.answered) return; Q.answered = true;
+  const ok = q.opts[idx].correct;
+  $$('[data-opt]').forEach((b,i) => { b.disabled = true; if (q.opts[i].correct) b.classList.add('correct'); else if (i === idx) b.classList.add('wrong'); });
+  const correct = q.opts.find(o => o.correct).label;
+  feedback(ok, correct);
+  if (q.t !== 'tr' || ok) speak(q.w.en);
+}
+function feedback(ok, correct){
+  const fb = $('#fb');
+  if (ok) { Q.score++; fb.className = 'feedback good'; fb.textContent = '✓ ' + praise(); }
+  else { fb.className = 'feedback bad'; fb.textContent = '✗ Қате. Дұрыс жауап: ' + correct; }
+  const nx = $('#next'); nx.hidden = false; nx.focus();
+}
+function renderBuild(q){
+  const tile = (ti, where) => `<button class="tile" data-ti="${ti}" data-where="${where}" lang="en" ${Q.answered?'disabled':''}>${esc(q.tokens[ti])}</button>`;
+  $('#bt').innerHTML = Q.built.length ? Q.built.map(ti => tile(ti,'t')).join('') : '<span class="muted" style="font-size:.9rem">Төмендегі сөздерді ретімен басыңыз</span>';
+  $('#bp').innerHTML = q.order.filter(ti => !Q.built.includes(ti)).map(ti => tile(ti,'p')).join('');
+  $$('.tile').forEach(b => b.addEventListener('click', () => {
+    const ti = +b.dataset.ti;
+    if (b.dataset.where === 'p') Q.built.push(ti); else Q.built = Q.built.filter(x => x !== ti);
+    renderBuild(q);
+  }));
+  const chk = $('#check'); if (chk) chk.disabled = Q.answered || Q.built.length !== q.tokens.length;
+}
+function checkBuild(q){
+  if (Q.answered) return; Q.answered = true;
+  const target = q.tokens.join(' ');
+  const got = Q.built.map(i => q.tokens[i]).join(' ');
+  const ok = got.toLowerCase() === target.toLowerCase();
+  renderBuild(q);
+  $('#bt').classList.add(ok ? 'correct' : 'wrong');
+  $('#check').hidden = true;
+  feedback(ok, q.line.en);
+  speak(q.line.en);
+}
+function finishQuiz(){
+  const total = Q.qs.length, stars = starsFor(Q.score / total);
+  S.stars += stars;
+  S.tests.push({d: today(), type: Q.type, topic: Q.topic === 'all' ? 'Барлығы' : topicById(Q.topic).name, score: Q.score, total, stars});
+  S.tests = S.tests.slice(-100);
+  markActive();
+  Q.result = {score:Q.score, total, stars}; Q.qs = null;
+  quizResult();
+}
+function quizResult(){
+  const r = Q.result, k = isKid(), pct = Math.round(r.score / r.total * 100);
+  app.innerHTML = `
+  <div class="card result">
+    <h1>${r.stars === 3 ? praise() + (k ? ' 🎉' : '') : r.stars >= 1 ? (k ? 'Жақсы! Тағы талпын!' : 'Жақсы нәтиже!') : (k ? 'Ештеңе етпейді, тағы байқап көр!' : 'Тағы жаттығып көріңіз')}</h1>
+    <div class="big-stars" aria-label="${r.stars} жұлдыз">${'★'.repeat(r.stars)}<span class="off">${'★'.repeat(3-r.stars)}</span></div>
+    <p class="score">${r.score} / ${r.total} · ${pct}%</p>
+    <p class="muted">${r.stars ? `+${r.stars} жұлдыз жиналды!` : 'Жұлдыз алу үшін кемінде 40% дұрыс жауап беру керек.'}</p>
+    <div class="card-actions">
+      <button class="btn primary" id="qagain">↻ Қайта тапсыру</button>
+      <button class="btn" id="qsetup">Басқа тест</button>
+      <a class="btn" href="#progress">Жетістіктер →</a>
+    </div>
+  </div>`;
+  $('#qagain').addEventListener('click', () => { Q.result = null; Q.qs = makeQuestions(); Q.i = 0; Q.score = 0; quizQuestion(); });
+  $('#qsetup').addEventListener('click', () => { Q.result = null; pageQuiz(); });
+}
+
+/* ===================== АЙТЫЛЫМ ===================== */
+const exw = w => `<button class="exw" data-say="${esc(w)}" lang="en">${esc(w)} <i>${SPK}</i></button>`;
+function pageSounds(){
+  const known = [
+    ['ә','/æ/','cat','кәт'], ['ң','/ŋ/','sing','сиң'], ['ұ','/ʊ/','book','бұк'], ['ө:','/ɜː/','bird','бө:д'], ['һ','/h/','hello','һэлоу']
+  ];
+  const hard = [
+    ['th','/θ/','Тілдің ұшын үстіңгі және астыңғы тістердің арасына сәл шығарып, ауаны үрлеңіз. Дауыс қатыспайды. Транскрипцияда «с» деп берілген, бірақ бұл таза «с» емес!', ['think','three','thank you','mouth']],
+    ['th','/ð/','Тіл сол қалыпта тұрады, бірақ дауыс қосылады — тіл сәл дірілдейді. Транскрипцияда «з» деп берілген.', ['this','the','mother','weather']],
+    ['w','/w/','Ерінді дөңгелектеп алға созыңыз да, бірден ашыңыз. Бұл «в» емес! Транскрипцияда «у» деп берілген.', ['water','window','west','work']],
+    ['r','/r/','Тілдің ұшы таңдайға тимейді және дірілдемейді. Қазақтың «р» дыбысынан әлдеқайда жұмсақ.', ['red','rain','rabbit','right']],
+    ['ː','—','Созылыңқы дауыстылар. Ағылшын тілінде дыбыстың ұзындығы сөздің мағынасын өзгертеді. «:» белгісін көрсеңіз — созып айтыңыз.', ['sheep','food','car','bird']],
+    ['b d g','—','Сөз соңындағы ұяң дауыссыздар. Сөз соңындағы б, д, г дыбыстарын қатаңдатпаңыз: bed [бэд] — «бэт» емес, dog [дог] — «док» емес.', ['bed','dog','bag','good']]
+  ];
+  const pairs = [
+    ['ship','шип','/ʃɪp/','кеме','sheep','ши:п','/ʃiːp/','қой'],
+    ['think','сиңк','/θɪŋk/','ойлау','sink','сиңк','/sɪŋk/','раковина'],
+    ['three','сри:','/θriː/','үш','tree','три:','/triː/','ағаш'],
+    ['cat','кәт','/kæt/','мысық','cut','кат','/kʌt/','кесу'],
+    ['bed','бэд','/bed/','төсек','bad','бәд','/bæd/','жаман'],
+    ['west','уэст','/west/','батыс','vest','вэст','/vest/','жилет'],
+    ['full','фұл','/fʊl/','толы','fool','фу:л','/fuːl/','ақымақ'],
+    ['walk','уо:к','/wɔːk/','жаяу жүру','work','уө:к','/wɜːk/','жұмыс']
+  ];
+  const pw = (en,tr,ipa,kk) => `<button class="pw" data-say="${esc(en)}" aria-label="Тыңдау: ${esc(en)}"><b lang="en">${esc(en)}</b><small>[${esc(tr)}] ${esc(ipa)}</small><span class="m">${esc(kk)}</span></button>`;
+  app.innerHTML = `
+  <div class="page-head"><h1>Айтылым</h1>
+  <p class="lead">Ағылшын дыбыстарын дұрыс айтуды үйреніңіз. Кез келген сөзді басып тыңдаңыз. Жоғарыдағы «🐢 Баяу дауыс» батырмасы дыбыстауды баяулатады.</p></div>
+  <div class="note"><b>Транскрипция туралы.</b> Сайттағы транскрипция қазақ әріптерімен жазылған. «:» белгісі — дыбысты созып айту керек дегенді білдіреді: see [си:], food [фу:д]. th дыбыстары «с» және «з» әріптерімен берілген — оларды дұрыс айту жолын төменнен қараңыз.</div>
+  <section class="section" aria-labelledby="h1s">
+    <h2 id="h1s">Қазақ тілінде бар дыбыстар</h2>
+    <p class="muted">Бұл дыбыстар сізге таныс — ағылшын тілінде де дәл солай айтылады.</p>
+    <div class="sgrid">${known.map(([kz,ipa,en,tr]) => `<div class="sbox"><div class="kz">${kz}</div><div class="ipa">${ipa}</div><div class="ex"><span lang="en">${en}</span> <span class="muted">[${tr}]</span> ${sayBtn(en)}</div></div>`).join('')}</div>
+  </section>
+  <section class="section" aria-labelledby="h2s">
+    <h2 id="h2s">Қиын дыбыстар</h2>
+    <div class="hard">${hard.map(([l,ipa,tip,ex]) => `<div class="card"><h3><span>${l}</span><span class="ipa">${ipa}</span></h3><p>${tip}</p><div class="exs">${ex.map(exw).join('')}</div></div>`).join('')}</div>
+  </section>
+  <section class="section" aria-labelledby="h3s">
+    <h2 id="h3s">Минималды жұптар</h2>
+    <p class="muted">Бір ғана дыбысымен ерекшеленетін сөздер. Екеуін кезекпен тыңдап, айырмашылығын естуге тырысыңыз.</p>
+    <div class="pairs">${pairs.map(p => `<div class="pair">${pw(p[0],p[1],p[2],p[3])}<span class="vs">≠</span>${pw(p[4],p[5],p[6],p[7])}</div>`).join('')}</div>
+  </section>`;
+}
+
+/* ===================== ЖЕТІСТІКТЕР ===================== */
+function pageProgress(){
+  const topics = availTopics();
+  const recent = S.tests.slice(-10).reverse();
+  app.innerHTML = `
+  <div class="page-head"><h1>Жетістіктер</h1><p class="lead">${isKid() ? 'Сенің жетістіктерің! Жұлдыз жинай бер ⭐' : 'Сіздің оқу нәтижелеріңіз. Прогресс осы браузерде сақталады.'}</p></div>
+  <div class="stats four" style="margin-bottom:24px">${statTiles()}</div>
+  <section class="card" aria-labelledby="tbH" style="margin-bottom:24px">
+    <h2 id="tbH">Тақырыптар бойынша</h2>
+    <div class="tbars">${topics.map(t => { const n = learnedCount(t.words), all = t.words.length; return `
+      <div><div class="tbar-h"><span>${t.icon} ${esc(t.name)}</span><span>${n} / ${all}</span></div>
+      <div class="bar" role="progressbar" aria-label="${esc(t.name)}" aria-valuemin="0" aria-valuemax="${all}" aria-valuenow="${n}"><span style="width:${n/all*100}%"></span></div></div>`; }).join('')}</div>
+  </section>
+  <section class="card" aria-labelledby="ttH" style="margin-bottom:24px">
+    <h2 id="ttH">Соңғы тесттер</h2>
+    ${recent.length ? `<div class="tablewrap"><table>
+      <thead><tr><th>Күні</th><th>Түрі</th><th>Тақырып</th><th>Нәтиже</th><th>Жұлдыз</th></tr></thead>
+      <tbody>${recent.map(t => `<tr><td>${t.d.split('-').reverse().join('.')}</td><td>${esc((QTYPES[t.type]||{}).name || t.type)}</td><td>${esc(t.topic)}</td><td><b>${t.score}/${t.total}</b></td><td>${starsHTML(t.stars)}</td></tr>`).join('')}</tbody>
+    </table></div>` : `<p class="muted">Әлі тест тапсырылған жоқ. <a href="#quiz">Бірінші тестті тапсыру →</a></p>`}
+  </section>
+  <section class="card" aria-labelledby="rsH">
+    <h2 id="rsH">Прогресті өшіру</h2>
+    <p class="muted">Үйренген сөздер, жұлдыздар және тест тарихы толығымен өшіріледі.</p>
+    <button class="btn" id="resetBtn">Прогресті өшіру</button>
+    <div class="confirm" id="confirm" hidden>
+      <p>Барлық прогресс өшіріледі. Бұл әрекетті қайтару мүмкін емес. Сенімдісіз бе?</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn danger" id="resetYes">Иә, өшіру</button><button class="btn" id="resetNo">Жоқ, болдырмау</button></div>
+    </div>
+  </section>`;
+  $('#resetBtn').addEventListener('click', () => { $('#confirm').hidden = false; $('#resetBtn').hidden = true; $('#resetNo').focus(); });
+  $('#resetNo').addEventListener('click', () => { $('#confirm').hidden = true; $('#resetBtn').hidden = false; $('#resetBtn').focus(); });
+  $('#resetYes').addEventListener('click', () => {
+    S = Object.assign({}, DEFAULTS, {mode:S.mode, slow:S.slow, theme:S.theme, learned:{}, tests:[], days:[]});
+    save(); toast('Прогресс өшірілді'); pageProgress();
+  });
+}
+
+/* ===================== ІСКЕ ҚОСУ ===================== */
+applyChrome();
+route();
+if (!S.mode) openModeModal();
+</script>
+</body>
+</html>
